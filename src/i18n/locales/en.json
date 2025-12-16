@@ -9,8 +9,8 @@
   "hero": {
     "greeting": "Hi, I'm",
     "name": "Lucas Mauricio",
-    "title": "Front-end UI Developer",
-    "description": "Front-end UI Developer with 3+ years of experience specializing in building pixel-perfect, responsive user interfaces using React and Next.js. Strong focus on translating Figma designs into clean, maintainable code with high visual accuracy.",
+    "title": "Front-end Developer",
+    "description": "Front-end Developer with 3+ years of experience in React and TypeScript applications, working on high-complexity projects including SaaS products, government systems, and international projects. Experienced in accessibility, automated testing, CI/CD, Design Systems, and integration with REST APIs and WebSockets. Collaborative work with multidisciplinary teams with a focus on quality, scalability, and user experience.",
     "cta": "Get in touch",
     "viewResume": "View Resume"
   },

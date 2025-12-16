@@ -9,8 +9,8 @@
   "hero": {
     "greeting": "Olá, eu sou",
     "name": "Lucas Mauricio",
-    "title": "Desenvolvedor Front-end UI",
-    "description": "Desenvolvedor Front-end UI com mais de 3 anos de experiência especializado em construir interfaces de usuário responsivas e pixel-perfect usando React e Next.js. Forte foco em traduzir designs do Figma em código limpo e sustentável com alta precisão visual.",
+    "title": "Desenvolvedor Front-end",
+    "description": "Desenvolvedor Front-end com mais de 3 anos de experiência em aplicações React e TypeScript, atuando em projetos de alta complexidade, incluindo produtos SaaS, sistemas governamentais e projetos internacionais. Experiência com acessibilidade, testes automatizados, CI/CD, Design Systems e integração com APIs REST e WebSockets. Atuação colaborativa com times multidisciplinares e foco em qualidade, escalabilidade e experiência do usuário.",
     "cta": "Entre em contato",
     "viewResume": "Ver Currículo"
   },
