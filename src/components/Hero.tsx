@@ -22,7 +22,7 @@ export default function Hero() {
       <div className="absolute inset-0 bg-gradient-to-r from-cyan-500/10 via-blue-500/10 to-purple-500/10" />
 
       <div className="relative max-w-4xl mx-auto text-center">
-        <p className="text-cyan-400 text-lg mb-4 font-medium" aria-label="Greeting">
+        <p className="text-cyan-400 text-lg mb-4 font-medium">
           {t('hero.greeting')}
         </p>
 
@@ -40,6 +40,7 @@ export default function Hero() {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <button
+            type="button"
             onClick={scrollToContact}
             className="px-8 py-3 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg shadow-cyan-500/50 hover:shadow-cyan-500/70 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-900"
             aria-label={t('hero.cta')}

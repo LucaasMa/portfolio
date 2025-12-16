@@ -41,22 +41,21 @@ export default function Navigation() {
     >
       <div className="max-w-7xl mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <a
-            href="#"
-            onClick={(e) => {
-              e.preventDefault()
+          <button
+            type="button"
+            onClick={() => {
               window.scrollTo({ top: 0, behavior: 'smooth' })
             }}
             className="text-2xl font-black text-white hover:text-cyan-400 transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-900 rounded-lg px-2"
             aria-label="Go to top"
           >
             LM
-          </a>
+          </button>
 
           <div className="hidden md:flex items-center gap-8">
-            {navItems.map((item, index) => (
+            {navItems.map((item) => (
               <a
-                key={index}
+                key={item.href}
                 href={item.href}
                 onClick={(e) => handleNavClick(e, item.href)}
                 className="text-gray-300 hover:text-cyan-400 transition-colors font-medium focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-900 rounded-lg px-2 py-1"
@@ -70,6 +69,7 @@ export default function Navigation() {
           <div className="md:hidden flex items-center gap-4">
             <LanguageSwitcher />
             <button
+              type="button"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-white p-2 hover:bg-slate-800 rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-cyan-500"
               aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
@@ -87,9 +87,9 @@ export default function Navigation() {
         {isMenuOpen && (
           <div className="md:hidden mt-4 pb-4 border-t border-slate-700 pt-4">
             <div className="flex flex-col gap-3">
-              {navItems.map((item, index) => (
+              {navItems.map((item) => (
                 <a
-                  key={index}
+                  key={item.href}
                   href={item.href}
                   onClick={(e) => handleNavClick(e, item.href)}
                   className="text-gray-300 hover:text-cyan-400 transition-colors font-medium px-4 py-2 rounded-lg hover:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-cyan-500"

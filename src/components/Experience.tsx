@@ -66,12 +66,12 @@ export default function Experience() {
                 </div>
               </div>
 
-              <ul className="space-y-3 mb-6" role="list">
+              <ul className="space-y-3 mb-6">
                 {(t(`experience.${exp.key}.description`, {
                   returnObjects: true,
                 }) as string[]).map((item, index) => (
                   <li
-                    key={index}
+                    key={`${exp.key}-desc-${index}`}
                     className="text-gray-300 leading-relaxed flex gap-3"
                   >
                     <span className="text-cyan-400 mt-2 flex-shrink-0" aria-hidden="true">

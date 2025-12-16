@@ -4,7 +4,7 @@ import { useState } from 'react'
 
 export default function Contact() {
   const { t } = useTranslation()
-  const [copiedIndex, setCopiedIndex] = useState<number | null>(null)
+  const [copiedLabel, setCopiedLabel] = useState<string | null>(null)
 
   const contactMethods = [
     {
@@ -21,11 +21,11 @@ export default function Contact() {
     },
   ]
 
-  const copyToClipboard = async (text: string, index: number) => {
+  const copyToClipboard = async (text: string, label: string) => {
     try {
       await navigator.clipboard.writeText(text)
-      setCopiedIndex(index)
-      setTimeout(() => setCopiedIndex(null), 2000)
+      setCopiedLabel(label)
+      setTimeout(() => setCopiedLabel(null), 2000)
     } catch (err) {
       console.error('Failed to copy:', err)
     }
@@ -65,10 +65,11 @@ export default function Contact() {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
-          {contactMethods.map((method, index) => (
+          {contactMethods.map((method) => (
             <button
-              key={index}
-              onClick={() => copyToClipboard(method.value, index)}
+              key={method.label}
+              type="button"
+              onClick={() => copyToClipboard(method.value, method.label)}
               className="bg-slate-900/50 backdrop-blur-sm border border-slate-700 rounded-xl p-6 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-800 group cursor-pointer text-left w-full"
               aria-label={method.ariaLabel}
             >
@@ -85,7 +86,7 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="text-cyan-400 flex-shrink-0">
-                  {copiedIndex === index ? (
+                  {copiedLabel === method.label ? (
                     <Check className="w-5 h-5" aria-hidden="true" />
                   ) : (
                     <Copy className="w-5 h-5" aria-hidden="true" />
@@ -101,9 +102,9 @@ export default function Contact() {
             {t('contact.social')}
           </h3>
           <div className="flex justify-center gap-4">
-            {socialLinks.map((social, index) => (
+            {socialLinks.map((social) => (
               <a
-                key={index}
+                key={social.label}
                 href={social.href}
                 target="_blank"
                 rel="noopener noreferrer"

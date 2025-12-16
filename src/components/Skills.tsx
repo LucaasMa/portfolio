@@ -109,23 +109,22 @@ export default function Skills() {
         </h2>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {skillCategories.map((category, index) => {
+          {skillCategories.map((category) => {
             const colors = getColorClasses(category.color)
             return (
               <article
-                key={index}
+                key={category.title}
                 className={`bg-slate-900/50 backdrop-blur-sm border ${colors.border} rounded-xl p-6 hover:shadow-lg transition-all duration-300`}
               >
                 <div className="flex items-center gap-3 mb-4">
                   <div className={colors.icon}>{category.icon}</div>
                   <h3 className="text-xl font-bold text-white">{category.title}</h3>
                 </div>
-                <div className="flex flex-wrap gap-2" role="list">
-                  {category.skills.map((skill, skillIndex) => (
+                <div className="flex flex-wrap gap-2">
+                  {category.skills.map((skill) => (
                     <span
-                      key={skillIndex}
+                      key={skill}
                       className={`px-3 py-1.5 rounded-lg text-sm font-medium border ${colors.badge} transition-all duration-200 hover:scale-105`}
-                      role="listitem"
                     >
                       {skill}
                     </span>
