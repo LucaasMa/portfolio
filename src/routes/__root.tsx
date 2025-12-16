@@ -2,13 +2,12 @@ import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
 import { TanStackDevtools } from '@tanstack/react-devtools'
 
-import Header from '../components/Header'
-
 import AiDevtools from '../lib/ai-devtools'
 
 import StoreDevtools from '../lib/demo-store-devtools'
 
 import appCss from '../styles.css?url'
+import '../i18n/config'
 
 export const Route = createRootRoute({
   head: () => ({
@@ -21,7 +20,12 @@ export const Route = createRootRoute({
         content: 'width=device-width, initial-scale=1',
       },
       {
-        title: 'TanStack Start Starter',
+        title: 'Lucas Mauricio | Front-end Developer',
+      },
+      {
+        name: 'description',
+        content:
+          'Lucas Mauricio - Front-end UI Developer with 3+ years of experience specializing in React, Next.js, and TypeScript. Building pixel-perfect, accessible user interfaces.',
       },
     ],
     links: [
@@ -41,8 +45,7 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body>
-        <Header />
+      <body className="antialiased">
         {children}
         <TanStackDevtools
           config={{

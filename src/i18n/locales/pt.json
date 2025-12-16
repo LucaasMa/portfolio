@@ -1,0 +1,95 @@
+{
+  "nav": {
+    "about": "Sobre",
+    "experience": "Experiência",
+    "skills": "Habilidades",
+    "contact": "Contato",
+    "projects": "Projetos"
+  },
+  "hero": {
+    "greeting": "Olá, eu sou",
+    "name": "Lucas Mauricio",
+    "title": "Desenvolvedor Front-end UI",
+    "description": "Desenvolvedor Front-end UI com mais de 3 anos de experiência especializado em construir interfaces de usuário responsivas e pixel-perfect usando React e Next.js. Forte foco em traduzir designs do Figma em código limpo e sustentável com alta precisão visual.",
+    "cta": "Entre em contato",
+    "viewResume": "Ver Currículo"
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "intro": "Experiente em layouts responsivos, boas práticas de acessibilidade, otimização de performance e desenvolvimento focado em UI. Confortável trabalhando de forma independente em ambientes remotos e colaborando proximamente com designers para entregar experiências de usuário refinadas."
+  },
+  "experience": {
+    "title": "Experiência Profissional",
+    "present": "Presente",
+    "cpqd": {
+      "position": "Desenvolvedor Front-End",
+      "company": "CPQD",
+      "location": "Campinas-SP",
+      "type": "Híbrido",
+      "period": "Dez 2022 - Presente",
+      "description": [
+        "Desenvolvi uma interface de demonstração em tempo real para um produto de biometria de voz usando React, WebSockets e ApexCharts, permitindo visualização de dados ao vivo e acelerando a validação técnica com clientes e stakeholders.",
+        "Trabalhei no projeto INSPIRE, uma iniciativa governamental em parceria com o Ministério da Gestão e Inovação (MGI), desenvolvendo um portal de notícias de alta performance e acessível que atendeu requisitos técnicos e de conformidade rigorosos.",
+        "Contribuí para a evolução de um Design System proprietário, padronizando componentes reutilizáveis e aumentando a produtividade da equipe enquanto garantia consistência entre UX e desenvolvimento Front-end.",
+        "Refatorei uma interface legada de servidor de licenças migrando componentes baseados em classe para componentes funcionais e convertendo JavaScript para TypeScript, melhorando significativamente a manutenibilidade, legibilidade e escalabilidade do código.",
+        "Integrei APIs RESTful consumindo documentação técnica e colaborando proximamente com equipes de backend para garantir consistência de dados, performance e alinhamento com requisitos do produto.",
+        "Implementei testes automatizados em aplicações React usando Jest, Vitest e React Testing Library, aumentando a confiabilidade da aplicação e cobertura de testes em fluxos críticos de usuário.",
+        "Editei e mantive pipelines de CI/CD do Jenkins para aplicações Front-end, automatizando processos de build, teste e deploy e melhorando a qualidade de entrega.",
+        "Atuei como co-host do Front-end Chapter, organizando reuniões semanais, apresentando tópicos técnicos e promovendo compartilhamento de conhecimento na equipe Front-end."
+      ]
+    },
+    "mmarketplaces": {
+      "position": "Desenvolvedor Front-End",
+      "company": "MMarketplaces",
+      "location": "Remoto",
+      "type": "Freelance",
+      "period": "Dez 2023 - Abr 2024",
+      "description": [
+        "Liderei a modernização da aplicação migrando o sistema para React, melhorando a manutenibilidade e preparando o código base para escalabilidade futura.",
+        "Implementei otimizações básicas de SEO (HTML semântico, metadados, melhorias de performance), resultando em aproximadamente 20% de aumento na visibilidade do site.",
+        "Traduzi designs de UI em interfaces React e Next.js pixel-perfect, garantindo espaçamento preciso, tipografia e consistência de layout em dispositivos desktop, tablet e mobile.",
+        "Desenvolvi um novo dashboard interativo usando ApexCharts, aprimorando a visualização de dados e permitindo melhores insights operacionais para usuários.",
+        "Projetei e implementei uma interface totalmente responsiva e mobile-first alinhada com a identidade visual da empresa, melhorando significativamente a usabilidade e experiência do usuário.",
+        "Otimizei integrações com a API Bling, reduzindo o tempo de carregamento da aplicação em aproximadamente 90% e aprimorando muito a performance.",
+        "Desenvolvi uma funcionalidade de chat integrada com a API do Mercado Livre, permitindo suporte ao cliente mais eficiente e centralizado."
+      ]
+    },
+    "hiit": {
+      "position": "Desenvolvedor Front-End",
+      "company": "HIIT & Tabata",
+      "location": "Remoto",
+      "type": "Remoto",
+      "period": "Jul 2022 - Abr 2023",
+      "description": [
+        "Aprofundei expertise em tecnologias front-end como React, JavaScript, CSS e MUI (Material UI).",
+        "Desenvolvi interfaces responsivas e acessíveis focadas na experiência de treinadores.",
+        "Contribuí diretamente para aprimorar a experiência do usuário aplicando boas práticas de usabilidade e design."
+      ]
+    }
+  },
+  "skills": {
+    "title": "Habilidades & Tecnologias",
+    "categories": {
+      "frontend": "Frontend",
+      "styling": "Estilização",
+      "testing": "Testes",
+      "tools": "Ferramentas & Outros"
+    }
+  },
+  "projects": {
+    "title": "Projetos & Ferramentas",
+    "comingSoon": "Em breve...",
+    "description": "Esta seção mostrará ferramentas e projetos paralelos que estou desenvolvendo."
+  },
+  "contact": {
+    "title": "Entre em Contato",
+    "description": "Estou atualmente aberto a novas oportunidades. Se você tem uma pergunta ou só quer dizer oi, fique à vontade para entrar em contato!",
+    "email": "Email",
+    "phone": "Telefone",
+    "social": "Redes Sociais"
+  },
+  "footer": {
+    "rights": "Todos os direitos reservados.",
+    "built": "Construído com"
+  }
+}

@@ -1,84 +1,62 @@
-Welcome to your new TanStack app! 
+# Lucas Mauricio - Portfolio
 
-# Getting Started
-
-To run this application:
-
-```bash
-npm install
-npm run start
-```
-
-# Building For Production
-
-To build this application for production:
-
-```bash
-npm run build
-```
-
-## Testing
-
-This project uses [Vitest](https://vitest.dev/) for testing. You can run the tests with:
-
-```bash
-npm run test
-```
-
-## Styling
-
-This project uses [Tailwind CSS](https://tailwindcss.com/) for styling.
-
-
-## Linting & Formatting
-
-This project uses [Biome](https://biomejs.dev/) for linting and formatting. The following scripts are available:
-
-
-```bash
-npm run lint
-npm run format
-npm run check
-```
-
-
-# TanStack Chat Application
-
-Am example chat application built with TanStack Start, TanStack Store, and Claude AI.
-
-## .env Updates
-
-```env
-ANTHROPIC_API_KEY=your_anthropic_api_key
-```
+A modern, accessible portfolio website built with TanStack Start, React, TypeScript, and Tailwind CSS. Features bilingual support (English/Portuguese) with i18next.
 
 ## ✨ Features
 
-### AI Capabilities
-- 🤖 Powered by Claude 3.5 Sonnet 
-- 📝 Rich markdown formatting with syntax highlighting
-- 🎯 Customizable system prompts for tailored AI behavior
-- 🔄 Real-time message updates and streaming responses (coming soon)
+- 🌐 **Bilingual**: Full support for English and Portuguese with i18next
+- ♿ **Accessible**: Built with a11y best practices (ARIA labels, semantic HTML, keyboard navigation)
+- 📱 **Responsive**: Mobile-first design that works on all devices
+- 🎨 **Modern Design**: Clean UI with Tailwind CSS and smooth animations
+- ⚡ **Fast**: Built with TanStack Start and optimized for performance
+- 🧪 **Type-Safe**: Full TypeScript support
 
-### User Experience
-- 🎨 Modern UI with Tailwind CSS and Lucide icons
-- 🔍 Conversation management and history
-- 🔐 Secure API key management
-- 📋 Markdown rendering with code highlighting
+## 📋 Sections
 
-### Technical Features
-- 📦 Centralized state management with TanStack Store
-- 🔌 Extensible architecture for multiple AI providers
-- 🛠️ TypeScript for type safety
+- **Hero**: Introduction with call-to-action buttons
+- **Experience**: Detailed work history with technologies used
+- **Skills**: Categorized technical skills (Frontend, Styling, Testing, Tools)
+- **Projects**: Placeholder for future tools and projects
+- **Contact**: Social links (GitHub, LinkedIn, Email, Phone)
 
-## Architecture
+## 🚀 Getting Started
 
-### Tech Stack
+Install dependencies:
+
+```bash
+pnpm install
+```
+
+Run development server:
+
+```bash
+pnpm dev
+```
+
+Build for production:
+
+```bash
+pnpm build
+```
+
+Preview production build:
+
+```bash
+pnpm preview
+```
+
+## 🛠️ Tech Stack
+
 - **Frontend Framework**: TanStack Start
-- **Routing**: TanStack Router
-- **State Management**: TanStack Store
+- **UI Library**: React 19
+- **Language**: TypeScript
 - **Styling**: Tailwind CSS
-- **AI Integration**: Anthropic's Claude API
+- **Internationalization**: i18next + react-i18next
+- **Icons**: Lucide React
+- **Routing**: TanStack Router
+- **Build Tool**: Vite
+- **Testing**: Vitest + React Testing Library
+- **Code Quality**: Biome
 
 
 ## Routing
