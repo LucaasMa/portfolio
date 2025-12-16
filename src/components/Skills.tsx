@@ -1,5 +1,5 @@
-import { useTranslation } from 'react-i18next'
 import { Code, Palette, TestTube, Wrench } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
 export default function Skills() {
   const { t } = useTranslation()
@@ -43,7 +43,7 @@ export default function Skills() {
         'Jest',
         'Vitest',
         'React Testing Library',
-        'MirageJS',
+        'PlayWright',
         'Unit Testing',
         'Integration Testing',
       ],
@@ -55,6 +55,7 @@ export default function Skills() {
       skills: [
         'Git',
         'GitHub',
+        'MirageJS',
         'Jenkins',
         'Vite',
         'Figma',
