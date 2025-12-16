@@ -21,6 +21,7 @@
   "experience": {
     "title": "Work Experience",
     "present": "Present",
+    "technologies": "Technologies",
     "cpqd": {
       "position": "Front-End Developer",
       "company": "CPQD",

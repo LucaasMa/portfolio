@@ -1,5 +1,5 @@
+import { Briefcase, Calendar, MapPin } from 'lucide-react'
 import { useTranslation } from 'react-i18next'
-import { Briefcase, MapPin, Calendar } from 'lucide-react'
 
 export default function Experience() {
   const { t } = useTranslation()
@@ -74,7 +74,7 @@ export default function Experience() {
                     key={`${exp.key}-desc-${index}`}
                     className="text-gray-300 leading-relaxed flex gap-3"
                   >
-                    <span className="text-cyan-400 mt-2 flex-shrink-0" aria-hidden="true">
+                    <span className="text-cyan-400 flex-shrink-0" aria-hidden="true">
                       •
                     </span>
                     <span>{item}</span>
@@ -84,7 +84,7 @@ export default function Experience() {
 
               <div>
                 <h4 className="text-sm font-semibold text-cyan-400 mb-2 uppercase tracking-wider">
-                  Technologies
+                  {t('experience.technologies')}
                 </h4>
                 <p className="text-gray-400 text-sm">{exp.technologies}</p>
               </div>
