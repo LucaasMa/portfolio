@@ -21,7 +21,7 @@ export const Route = createRootRoute({
       {
         name: 'description',
         content:
-          'Lucas Mauricio - Front-end UI Developer with 3+ years of experience specializing in React, Next.js, and TypeScript. Building pixel-perfect, accessible user interfaces.',
+          'Lucas Mauricio - Front-end Developer with 3+ years of experience specializing in React, Next.js, and TypeScript. Building pixel-perfect, accessible user interfaces.',
       },
     ],
     links: [

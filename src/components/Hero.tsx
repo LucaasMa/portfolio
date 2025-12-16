@@ -2,10 +2,16 @@ import { useTranslation } from 'react-i18next'
 import { ArrowDown, FileDown } from 'lucide-react'
 
 export default function Hero() {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
 
   const scrollToContact = () => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
+  }
+
+  const getResumeFile = () => {
+    return i18n.language === 'pt'
+      ? '/curriculoLucasMauricio.pdf'
+      : '/resume_Lucas_Mauricio.pdf'
   }
 
   return (
@@ -42,7 +48,7 @@ export default function Hero() {
           </button>
 
           <a
-            href="/resume_Lucas_Mauricio.pdf"
+            href={getResumeFile()}
             download
             className="px-8 py-3 bg-slate-800 hover:bg-slate-700 text-white font-semibold rounded-lg transition-all duration-300 border border-slate-700 hover:border-cyan-500/50 flex items-center gap-2 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:ring-offset-2 focus:ring-offset-slate-900"
             aria-label={t('hero.viewResume')}
