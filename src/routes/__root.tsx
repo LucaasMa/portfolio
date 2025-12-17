@@ -23,6 +23,48 @@ export const Route = createRootRoute({
         content:
           'Lucas Mauricio - Front-end Developer with 3+ years of experience specializing in React, Next.js, and TypeScript. Building pixel-perfect, accessible user interfaces.',
       },
+      {
+        property: 'og:title',
+        content: 'Lucas Mauricio | Front-end Developer',
+      },
+      {
+        property: 'og:description',
+        content:
+          'Front-end Developer with 3+ years of experience specializing in React, Next.js, and TypeScript. Building pixel-perfect, accessible user interfaces.',
+      },
+      {
+        property: 'og:type',
+        content: 'website',
+      },
+      {
+        property: 'og:image',
+        content: '/og-image.png',
+      },
+      {
+        property: 'og:image:width',
+        content: '1200',
+      },
+      {
+        property: 'og:image:height',
+        content: '630',
+      },
+      {
+        name: 'twitter:card',
+        content: 'summary_large_image',
+      },
+      {
+        name: 'twitter:title',
+        content: 'Lucas Mauricio | Front-end Developer',
+      },
+      {
+        name: 'twitter:description',
+        content:
+          'Front-end Developer with 3+ years of experience specializing in React, Next.js, and TypeScript.',
+      },
+      {
+        name: 'twitter:image',
+        content: '/og-image.png',
+      },
     ],
     links: [
       {
