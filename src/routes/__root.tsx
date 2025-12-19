@@ -37,8 +37,12 @@ export const Route = createRootRoute({
         content: 'website',
       },
       {
+        property: 'og:url',
+        content: 'https://lucasmauricio.com.br',
+      },
+      {
         property: 'og:image',
-        content: '/og-image.png',
+        content: 'https://lucasmauricio.com.br/og-image.png',
       },
       {
         property: 'og:image:width',
@@ -63,7 +67,7 @@ export const Route = createRootRoute({
       },
       {
         name: 'twitter:image',
-        content: '/og-image.png',
+        content: 'https://lucasmauricio.com.br/og-image.png',
       },
     ],
     links: [

@@ -1,6 +1,6 @@
-import { Check, Copy, ExternalLink, Mail, MessageCircle, Code2, Briefcase } from 'lucide-react'
-import { useTranslation } from 'react-i18next'
+import { Briefcase, Check, Code2, Copy, ExternalLink, Mail, MessageCircle } from 'lucide-react'
 import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 
 export default function Contact() {
   const { t } = useTranslation()
