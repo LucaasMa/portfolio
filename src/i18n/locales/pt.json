@@ -78,9 +78,17 @@
     }
   },
   "projects": {
-    "title": "Projetos & Ferramentas",
-    "comingSoon": "Em breve...",
-    "description": "Esta seção mostrará ferramentas e projetos paralelos que estou desenvolvendo."
+    "title": "Projetos & Contribuições",
+    "contribution": "Open Source",
+    "government": "Governo",
+    "inspire": {
+      "title": "DestaquesGovbr - Portal de Notícias do Governo Brasileiro",
+      "description": "Contribuindo para um portal de descoberta de notícias governamentais construído com Next.js, TypeScript e Typesense. Trabalhando em funcionalidades de busca, melhorias de UI e automação de testes."
+    },
+    "roadmap": {
+      "title": "Conteúdo de Design System para o Roadmap de Frontend",
+      "description": "Contribuí para o roadmap.sh propondo e adicionando conteúdo sobre Design System ao roadmap de frontend, cobrindo tipografia, cores, espaçamento, componentes de UI e padrões de interação."
+    }
   },
   "contact": {
     "title": "Entre em Contato",

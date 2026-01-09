@@ -78,9 +78,17 @@
     }
   },
   "projects": {
-    "title": "Projects & Tools",
-    "comingSoon": "Coming soon...",
-    "description": "This section will showcase tools and side projects I'm developing."
+    "title": "Projects & Contributions",
+    "contribution": "Open Source",
+    "government": "Government",
+    "inspire": {
+      "title": "DestaquesGovbr - Brazilian Government News Portal",
+      "description": "Contributing to a government news discovery portal built with Next.js, TypeScript, and Typesense. Working on search features, UI improvements, and test automation."
+    },
+    "roadmap": {
+      "title": "Design System Content for Frontend Roadmap",
+      "description": "Contributed to roadmap.sh by proposing and adding Design System content to the frontend roadmap, covering typography, colors, spacing, UI components, and interaction patterns."
+    }
   },
   "contact": {
     "title": "Get In Touch",
