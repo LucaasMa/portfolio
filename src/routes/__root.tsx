@@ -1,9 +1,24 @@
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
-import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
-import { TanStackDevtools } from '@tanstack/react-devtools'
+import { lazy, Suspense } from 'react'
 
 import appCss from '../styles.css?url'
 import '../i18n/config'
+
+const TanStackDevtools = import.meta.env.DEV
+  ? lazy(() =>
+      import('@tanstack/react-devtools').then((mod) => ({
+        default: mod.TanStackDevtools,
+      }))
+    )
+  : () => null
+
+const TanStackRouterDevtoolsPanel = import.meta.env.DEV
+  ? lazy(() =>
+      import('@tanstack/react-router-devtools').then((mod) => ({
+        default: mod.TanStackRouterDevtoolsPanel,
+      }))
+    )
+  : () => null
 
 export const Route = createRootRoute({
   head: () => ({
@@ -94,17 +109,21 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       </head>
       <body className="antialiased">
         {children}
-        <TanStackDevtools
-          config={{
-            position: 'bottom-right',
-          }}
-          plugins={[
-            {
-              name: 'Tanstack Router',
-              render: <TanStackRouterDevtoolsPanel />,
-            },
-          ]}
-        />
+        {import.meta.env.DEV && (
+          <Suspense fallback={null}>
+            <TanStackDevtools
+              config={{
+                position: 'bottom-right',
+              }}
+              plugins={[
+                {
+                  name: 'Tanstack Router',
+                  render: <TanStackRouterDevtoolsPanel />,
+                },
+              ]}
+            />
+          </Suspense>
+        )}
         <Scripts />
       </body>
     </html>
