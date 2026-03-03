@@ -48,7 +48,13 @@ export default function PresentRoulette() {
     const spins = 15
     const segmentDegrees = 360 / presents.length
     const randomSegment = Math.floor(Math.random() * presents.length)
-    const extraRotation = randomSegment * segmentDegrees + Math.random() * segmentDegrees * 0.8
+
+    // Calcula o ângulo correto para apontar o segmento selecionado
+    // Cada segmento tem um centro: segmento i tem centro em (i * segmentDegrees + segmentDegrees / 2)
+    // Para apontar para o topo (0°), a roda precisa girar para colocar esse centro no topo
+    const segmentCenter = randomSegment * segmentDegrees + segmentDegrees / 2
+    const baseRotation = (360 - segmentCenter) % 360
+    const extraRotation = baseRotation + (Math.random() - 0.5) * 10 // ±5° de variação
     const finalRotation = spins * 360 + extraRotation
 
     setRotation(finalRotation)

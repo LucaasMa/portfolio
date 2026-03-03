@@ -46,11 +46,11 @@ function SixYearsAnniversary() {
   const handleCardRevealed = (cardId: number) => {
     if (!revealedCards.includes(cardId)) {
       setRevealedCards([...revealedCards, cardId])
-
-      if (revealedCards.length === 2) {
-        setTimeout(() => setShowRoulette(true), 500)
-      }
     }
+  }
+
+  const handleClaimPresent = () => {
+    setShowRoulette(true)
   }
 
   return (
@@ -85,7 +85,7 @@ function SixYearsAnniversary() {
           </div>
         )}
 
-        {/* Instruction or Roulette */}
+        {/* Instruction or Claim Button */}
         {!showRoulette && revealedCards.length < 3 && (
           <div className="text-center">
             <p className="text-gray-300 text-lg">
@@ -103,6 +103,21 @@ function SixYearsAnniversary() {
                 />
               ))}
             </div>
+          </div>
+        )}
+
+        {/* Claim Present Button */}
+        {!showRoulette && revealedCards.length === 3 && (
+          <div className="text-center">
+            <p className="text-gray-300 text-lg mb-6">
+              🎉 Você revelou todas as 3 mensagens! 🎉
+            </p>
+            <button
+              onClick={handleClaimPresent}
+              className="px-12 py-4 text-2xl font-bold text-white bg-gradient-to-r from-pink-500 via-purple-500 to-cyan-500 rounded-full shadow-2xl hover:shadow-3xl transition-all transform hover:scale-105 active:scale-95"
+            >
+              🎁 Resgatar Presente 🎁
+            </button>
           </div>
         )}
 
