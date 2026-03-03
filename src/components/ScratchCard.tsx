@@ -113,7 +113,8 @@ export default function ScratchCard({
     const ctx = canvas.getContext('2d')
     if (!ctx) return
 
-    ctx.clearRect(x - 15, y - 15, 30, 30)
+    // Maior brush para raspar mais facilmente
+    ctx.clearRect(x - 20, y - 20, 40, 40)
   }
 
   const checkReveal = () => {
@@ -141,7 +142,7 @@ export default function ScratchCard({
     const totalPixels = (canvas.offsetWidth * canvas.offsetHeight) / (4 * 4)
     const percentage = transparentPixels / totalPixels
 
-    if (percentage > 0.4) {
+    if (percentage > 0.5) {
       revealCard()
     }
   }
@@ -162,8 +163,8 @@ export default function ScratchCard({
     <div className="relative h-64 rounded-lg overflow-hidden shadow-2xl">
       {/* Hidden content - revealed when scratched */}
       <div
-        className={`absolute inset-0 flex items-end justify-center transition-opacity duration-300 ${
-          isRevealed ? 'opacity-100' : 'opacity-0 pointer-events-none'
+        className={`absolute inset-0 flex items-end justify-center transition-all duration-500 ${
+          isRevealed ? 'opacity-100 scale-100' : 'opacity-0 scale-95 pointer-events-none'
         }`}
       >
         {photo ? (

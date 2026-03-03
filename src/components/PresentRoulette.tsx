@@ -45,22 +45,19 @@ export default function PresentRoulette() {
     setIsSpinning(true)
     setWinner(null)
 
-    const spins = 10
-    const extraRotation = Math.random() * 360
+    const spins = 15
+    const segmentDegrees = 360 / presents.length
+    const randomSegment = Math.floor(Math.random() * presents.length)
+    const extraRotation = randomSegment * segmentDegrees + Math.random() * segmentDegrees * 0.8
     const finalRotation = spins * 360 + extraRotation
-    const rotationWithOffset = finalRotation - (360 / presents.length) * 0.5
 
-    setRotation(rotationWithOffset)
+    setRotation(finalRotation)
 
     setTimeout(() => {
-      const normalizedRotation = ((360 - extraRotation) % 360 + 360) % 360
-      const segmentDegrees = 360 / presents.length
-      const selectedIndex = Math.floor(normalizedRotation / segmentDegrees) % presents.length
-      const selectedPresent = presents[selectedIndex]
-
+      const selectedPresent = presents[randomSegment]
       setWinner(selectedPresent)
       setIsSpinning(false)
-    }, 4000)
+    }, 5000)
   }
 
   return (
@@ -75,7 +72,7 @@ export default function PresentRoulette() {
 
         {/* Roulette wheel */}
         <div
-          className="w-full h-full rounded-full shadow-2xl transition-transform duration-4000 ease-out"
+          className="w-full h-full rounded-full shadow-2xl transition-transform duration-5000 ease-out"
           style={{
             transform: `rotate(${rotation}deg)`,
             background: `conic-gradient(

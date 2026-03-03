@@ -59,9 +59,9 @@ function SixYearsAnniversary() {
         {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-4">
-            6 Anos de
+            6 Anos
             <span className="block text-transparent bg-clip-text bg-gradient-to-r from-pink-400 via-purple-400 to-cyan-400">
-              Amor e Magia
+              Juntos
             </span>
           </h1>
           <p className="text-xl text-gray-300 mb-8">
