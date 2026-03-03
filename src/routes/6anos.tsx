@@ -27,16 +27,19 @@ function SixYearsAnniversary() {
       id: 1,
       text: 'Obrigado por embarcar comigo na loucura de festas eletrônicas',
       color: 'from-purple-600 to-pink-600',
+      photo: '/photos/card-1.jpg',
     },
     {
       id: 2,
       text: 'Obrigado por assistir anime comigo, por mais que eu seja chato e insuportável',
       color: 'from-blue-600 to-cyan-600',
+      photo: '/photos/card-2.jpg',
     },
     {
       id: 3,
       text: 'Obrigado por me impulsionar a ser alguém melhor',
       color: 'from-amber-600 to-orange-600',
+      photo: '/photos/card-3.jpg',
     },
   ]
 
@@ -75,6 +78,7 @@ function SixYearsAnniversary() {
                 id={message.id}
                 message={message.text}
                 colorGradient={message.color}
+                photo={message.photo}
                 onRevealed={handleCardRevealed}
               />
             ))}
