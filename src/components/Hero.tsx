@@ -170,7 +170,7 @@ export default function Hero() {
 	const getResumeFile = () => {
 		return i18n.language === "pt"
 			? "/curriculoLucasMauricio.pdf"
-			: "/Lucas_Mauricio_Software Engineer_Resume_.pdf";
+			: "/Lucas_Mauricio_Software Engineer_Resume.pdf";
 	};
 
 	return (
