@@ -1,24 +1,39 @@
 import { Briefcase, Calendar, MapPin } from "lucide-react";
 import { motion } from "motion/react";
+import ReactCountryFlag from "react-country-flag";
 import { useTranslation } from "react-i18next";
 
 export default function Experience() {
-	const { t } = useTranslation();
+	const { t, i18n } = useTranslation();
+	const isPt = i18n.language === "pt";
 
 	const experiences = [
+		{
+			key: "turing",
+			technologies:
+				"Next.js, React, TypeScript, AI/ML Tooling, Prompt Engineering, Assertion Frameworks",
+			countryCode: "US",
+			countryName: { en: "United States", pt: "Estados Unidos" },
+		},
 		{
 			key: "cpqd",
 			technologies:
 				"React, Next.js, TypeScript, TanStack Query, TanStack Router, SCSS, React Hook Form, Jest, Vitest, React Testing Library, MirageJS, i18next, WebSockets, Git, Jenkins",
+			countryCode: "BR",
+			countryName: { en: "Brazil", pt: "Brasil" },
 		},
 		{
 			key: "mmarketplaces",
 			technologies:
 				"React, TypeScript, Redux, React Router, Styled Components, Vite, Firebase, GitHub, Mercado Livre API, Bling API",
+			countryCode: "BR",
+			countryName: { en: "Brazil", pt: "Brasil" },
 		},
 		{
 			key: "hiit",
 			technologies: "React, JavaScript, CSS, MUI (Material UI)",
+			countryCode: null,
+			countryName: { en: "International", pt: "Internacional" },
 		},
 	];
 
@@ -101,7 +116,20 @@ export default function Experience() {
 											</div>
 										</div>
 									</div>
-									<div className="flex items-center gap-1.5 whitespace-nowrap">
+									<div className="flex items-center gap-2 whitespace-nowrap flex-wrap justify-end">
+										<span className="flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-full px-3 py-1 text-xs font-medium text-muted">
+											{exp.countryCode ? (
+												<ReactCountryFlag
+													countryCode={exp.countryCode}
+													svg
+													style={{ width: "1.1em", height: "1.1em" }}
+													aria-label={isPt ? exp.countryName.pt : exp.countryName.en}
+												/>
+											) : (
+												<span aria-hidden="true">🌐</span>
+											)}
+											<span>- {isPt ? exp.countryName.pt : exp.countryName.en}</span>
+										</span>
 										<span className="flex items-center gap-1.5 bg-primary/10 text-primary border border-primary/20 rounded-full px-3 py-1 text-xs font-medium">
 											<Calendar className="w-3 h-3" aria-hidden="true" />
 											{t(`experience.${exp.key}.period`)}

@@ -9,8 +9,8 @@
 	"hero": {
 		"greeting": "Hi, I'm",
 		"name": "Lucas Mauricio",
-		"title": "Front-end Developer",
-		"description": "Front-end Developer with 3+ years of experience in React and TypeScript applications, working on high-complexity projects including SaaS products, government systems, and international projects. Experienced in accessibility, automated testing, CI/CD, Design Systems, and integration with REST APIs and WebSockets. Collaborative work with multidisciplinary teams with a focus on quality, scalability, and user experience.",
+		"title": "Front-end UI Developer",
+		"description": "Front-end UI Developer with 3+ years of experience specializing in building pixel-perfect, responsive user interfaces using React and Next.js. Strong focus on translating Figma designs into clean, maintainable code with high visual accuracy. Experienced in responsive layouts, accessibility best practices, performance optimization, and UI-focused development. Comfortable working independently in remote environments and collaborating closely with designers to deliver polished user experiences.",
 		"cta": "Get in touch",
 		"viewResume": "View Resume"
 	},
@@ -22,6 +22,18 @@
 		"title": "Work Experience",
 		"present": "Present",
 		"technologies": "Technologies",
+		"turing": {
+			"position": "RL GYM - Front End (React) Developer",
+			"company": "Turing",
+			"location": "Remote",
+			"type": "Remote",
+			"period": "Jan 2025 - Present",
+			"description": [
+				"Built a Next.js-based interface for AI reinforcement learning workflows, delivering production-ready features within compressed timelines by rapidly iterating on UI components and meeting 100% of sprint deadlines.",
+				"Designed and implemented the prompt engineering and assertion testing pipeline, enabling AI agents to autonomously validate application behavior and reducing manual QA effort by streamlining the end-to-end testing process.",
+				"Provided ongoing maintenance and support for the internal tooling library, resolving critical bugs and improving developer experience for cross-functional teams working on AI testing infrastructure."
+			]
+		},
 		"cpqd": {
 			"position": "Front-End Developer",
 			"company": "CPQD",
