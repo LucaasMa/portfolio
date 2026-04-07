@@ -1,124 +1,164 @@
-import { useTranslation } from 'react-i18next'
-import { GitPullRequest, ExternalLink, Landmark, Globe, Github } from 'lucide-react'
+import {
+	ExternalLink,
+	Github,
+	GitPullRequest,
+	Globe,
+	Landmark,
+} from "lucide-react";
+import { motion } from "motion/react";
+import { useTranslation } from "react-i18next";
 
 interface ProjectLink {
-  href: string
-  text: string
-  icon?: React.ReactNode
+	href: string;
+	text: string;
+	icon?: React.ReactNode;
 }
 
 interface ProjectCardProps {
-  icon: React.ReactNode
-  badge: string
-  title: string
-  description: string
-  links: ProjectLink[]
+	icon: React.ReactNode;
+	badge: string;
+	title: string;
+	description: string;
+	links: ProjectLink[];
+	index: number;
 }
 
 function ProjectCard({
-  icon,
-  badge,
-  title,
-  description,
-  links,
+	icon,
+	badge,
+	title,
+	description,
+	links,
+	index,
 }: ProjectCardProps) {
-  return (
-    <div className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl p-8 hover:border-cyan-500/50 transition-colors group">
-      <div className="flex items-start gap-4">
-        <div className="flex-shrink-0 inline-flex items-center justify-center w-12 h-12 rounded-full bg-cyan-500/10 border border-cyan-500/30">
-          {icon}
-        </div>
-        <div className="flex-1 min-w-0">
-          <div className="flex items-center gap-2 mb-2">
-            <span className="text-xs font-medium text-cyan-400 bg-cyan-500/10 px-2 py-1 rounded">
-              {badge}
-            </span>
-          </div>
-          <h3 className="text-xl font-bold text-white mb-2 group-hover:text-cyan-400 transition-colors">
-            {title}
-          </h3>
-          <p className="text-gray-400 text-sm leading-relaxed mb-4">
-            {description}
-          </p>
-          <div className="flex flex-wrap items-center gap-4">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center gap-2 text-cyan-400 text-sm font-medium hover:text-cyan-300 transition-colors"
-              >
-                {link.icon}
-                <span>{link.text}</span>
-                <ExternalLink className="w-4 h-4" aria-hidden="true" />
-              </a>
-            ))}
-          </div>
-        </div>
-      </div>
-    </div>
-  )
+	return (
+		<motion.div
+			initial={{ opacity: 0, y: 32 }}
+			whileInView={{ opacity: 1, y: 0 }}
+			viewport={{ once: true, margin: "-60px" }}
+			transition={{
+				duration: 0.55,
+				delay: index * 0.1,
+				ease: [0.22, 1, 0.36, 1],
+			}}
+			className="relative bg-surface-raised border border-white/5 rounded-2xl p-8 group overflow-hidden hover:border-primary/30 transition-all duration-500 hover:shadow-[0_8px_40px_rgba(99,102,241,0.1)]"
+		>
+			{/* Hover shimmer */}
+			<div
+				className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-2xl"
+				style={{
+					background:
+						"linear-gradient(135deg, rgba(99,102,241,0.04) 0%, rgba(139,92,246,0.04) 100%)",
+				}}
+				aria-hidden="true"
+			/>
+
+			{/* Icon */}
+			<div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-primary/10 border border-primary/20 mb-5 group-hover:scale-110 transition-transform duration-300">
+				{icon}
+			</div>
+
+			{/* Badge */}
+			<div className="mb-3">
+				<span className="text-xs font-semibold text-accent bg-accent/10 border border-accent/20 px-2.5 py-1 rounded-full uppercase tracking-wider">
+					{badge}
+				</span>
+			</div>
+
+			<h3 className="font-display font-bold text-xl text-text mb-3 group-hover:text-primary transition-colors duration-300">
+				{title}
+			</h3>
+
+			<p className="text-muted text-sm leading-relaxed mb-6">{description}</p>
+
+			<div className="flex flex-wrap items-center gap-4">
+				{links.map((link) => (
+					<a
+						key={link.href}
+						href={link.href}
+						target="_blank"
+						rel="noopener noreferrer"
+						className="flex items-center gap-1.5 text-primary hover:text-accent text-sm font-medium transition-colors duration-200"
+					>
+						{link.icon}
+						<span>{link.text}</span>
+						<ExternalLink className="w-3.5 h-3.5" aria-hidden="true" />
+					</a>
+				))}
+			</div>
+		</motion.div>
+	);
 }
 
 export default function Projects() {
-  const { t } = useTranslation()
+	const { t } = useTranslation();
 
-  return (
-    <section
-      id="projects"
-      className="py-20 px-6 bg-slate-900"
-      aria-labelledby="projects-title"
-    >
-      <div className="max-w-6xl mx-auto">
-        <h2
-          id="projects-title"
-          className="text-4xl md:text-5xl font-black text-white mb-12 text-center"
-        >
-          {t('projects.title')}
-        </h2>
+	return (
+		<section
+			id="projects"
+			className="py-24 px-6 bg-surface"
+			aria-labelledby="projects-title"
+		>
+			<div className="max-w-6xl mx-auto">
+				<motion.div
+					initial={{ opacity: 0, y: 24 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, margin: "-80px" }}
+					transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+					className="mb-14"
+				>
+					<h2
+						id="projects-title"
+						className="font-display font-black text-4xl md:text-5xl text-text"
+					>
+						<span className="text-primary">#</span> {t("projects.title")}
+					</h2>
+					<div className="mt-3 w-16 h-0.5 bg-gradient-to-r from-primary to-secondary" />
+				</motion.div>
 
-        <div className="max-w-2xl mx-auto flex flex-col gap-6">
-          <ProjectCard
-            icon={
-              <Landmark className="w-6 h-6 text-cyan-400" aria-hidden="true" />
-            }
-            badge={t('projects.government')}
-            title={t('projects.inspire.title')}
-            description={t('projects.inspire.description')}
-            links={[
-              {
-                href: 'https://github.com/destaquesgovbr/portal',
-                text: 'GitHub',
-                icon: <Github className="w-4 h-4" aria-hidden="true" />,
-              },
-              {
-                href: 'https://destaquesgovbr-portal-klvx64dufq-rj.a.run.app/',
-                text: 'Portal',
-                icon: <Globe className="w-4 h-4" aria-hidden="true" />,
-              },
-            ]}
-          />
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+					<ProjectCard
+						index={0}
+						icon={
+							<Landmark className="w-7 h-7 text-primary" aria-hidden="true" />
+						}
+						badge={t("projects.government")}
+						title={t("projects.inspire.title")}
+						description={t("projects.inspire.description")}
+						links={[
+							{
+								href: "https://github.com/destaquesgovbr/portal",
+								text: "GitHub",
+								icon: <Github className="w-4 h-4" aria-hidden="true" />,
+							},
+							{
+								href: "https://destaquesgovbr-portal-klvx64dufq-rj.a.run.app/",
+								text: "Portal",
+								icon: <Globe className="w-4 h-4" aria-hidden="true" />,
+							},
+						]}
+					/>
 
-          <ProjectCard
-            icon={
-              <GitPullRequest
-                className="w-6 h-6 text-cyan-400"
-                aria-hidden="true"
-              />
-            }
-            badge={t('projects.contribution')}
-            title={t('projects.roadmap.title')}
-            description={t('projects.roadmap.description')}
-            links={[
-              {
-                href: 'https://github.com/kamranahmedse/developer-roadmap/issues/9420',
-                text: 'roadmap.sh',
-              },
-            ]}
-          />
-        </div>
-      </div>
-    </section>
-  )
+					<ProjectCard
+						index={1}
+						icon={
+							<GitPullRequest
+								className="w-7 h-7 text-primary"
+								aria-hidden="true"
+							/>
+						}
+						badge={t("projects.contribution")}
+						title={t("projects.roadmap.title")}
+						description={t("projects.roadmap.description")}
+						links={[
+							{
+								href: "https://github.com/kamranahmedse/developer-roadmap/issues/9420",
+								text: "roadmap.sh",
+							},
+						]}
+					/>
+				</div>
+			</div>
+		</section>
+	);
 }

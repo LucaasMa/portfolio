@@ -1,97 +1,148 @@
-import { Briefcase, Calendar, MapPin } from 'lucide-react'
-import { useTranslation } from 'react-i18next'
+import { Briefcase, Calendar, MapPin } from "lucide-react";
+import { motion } from "motion/react";
+import { useTranslation } from "react-i18next";
 
 export default function Experience() {
-  const { t } = useTranslation()
+	const { t } = useTranslation();
 
-  const experiences = [
-    {
-      key: 'cpqd',
-      technologies:
-        'React, Next.js, TypeScript, TanStack Query, TanStack Router, SCSS, React Hook Form, Jest, Vitest, React Testing Library, MirageJS, i18next, WebSockets, Git, Jenkins',
-    },
-    {
-      key: 'mmarketplaces',
-      technologies:
-        'React, TypeScript, Redux, React Router, Styled Components, Vite, Firebase, GitHub, Mercado Livre API, Bling API',
-    },
-    {
-      key: 'hiit',
-      technologies: 'React, JavaScript, CSS, MUI (Material UI)',
-    },
-  ]
+	const experiences = [
+		{
+			key: "cpqd",
+			technologies:
+				"React, Next.js, TypeScript, TanStack Query, TanStack Router, SCSS, React Hook Form, Jest, Vitest, React Testing Library, MirageJS, i18next, WebSockets, Git, Jenkins",
+		},
+		{
+			key: "mmarketplaces",
+			technologies:
+				"React, TypeScript, Redux, React Router, Styled Components, Vite, Firebase, GitHub, Mercado Livre API, Bling API",
+		},
+		{
+			key: "hiit",
+			technologies: "React, JavaScript, CSS, MUI (Material UI)",
+		},
+	];
 
-  return (
-    <section
-      id="experience"
-      className="py-20 px-6 bg-slate-900"
-      aria-labelledby="experience-title"
-    >
-      <div className="max-w-6xl mx-auto">
-        <h2
-          id="experience-title"
-          className="text-4xl md:text-5xl font-black text-white mb-12 text-center"
-        >
-          {t('experience.title')}
-        </h2>
+	return (
+		<section
+			id="experience"
+			className="py-24 px-6 bg-surface"
+			aria-labelledby="experience-title"
+		>
+			<div className="max-w-6xl mx-auto">
+				<motion.div
+					initial={{ opacity: 0, y: 24 }}
+					whileInView={{ opacity: 1, y: 0 }}
+					viewport={{ once: true, margin: "-80px" }}
+					transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
+					className="mb-14"
+				>
+					<h2
+						id="experience-title"
+						className="font-display font-black text-4xl md:text-5xl text-text"
+					>
+						<span className="text-primary">#</span> {t("experience.title")}
+					</h2>
+					<div className="mt-3 w-16 h-0.5 bg-gradient-to-r from-primary to-secondary" />
+				</motion.div>
 
-        <div className="space-y-12">
-          {experiences.map((exp) => (
-            <article
-              key={exp.key}
-              className="bg-slate-800/50 backdrop-blur-sm border border-slate-700 rounded-xl p-6 md:p-8 hover:border-cyan-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-cyan-500/10"
-            >
-              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
-                <div>
-                  <h3 className="text-2xl font-bold text-white mb-2">
-                    {t(`experience.${exp.key}.position`)}
-                  </h3>
-                  <div className="flex flex-wrap items-center gap-4 text-gray-400">
-                    <div className="flex items-center gap-2">
-                      <Briefcase className="w-4 h-4 text-cyan-400" aria-hidden="true" />
-                      <span>{t(`experience.${exp.key}.company`)}</span>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <MapPin className="w-4 h-4 text-cyan-400" aria-hidden="true" />
-                      <span>
-                        {t(`experience.${exp.key}.location`)} (
-                        {t(`experience.${exp.key}.type`)})
-                      </span>
-                    </div>
-                  </div>
-                </div>
-                <div className="flex items-center gap-2 text-gray-400 whitespace-nowrap">
-                  <Calendar className="w-4 h-4 text-cyan-400" aria-hidden="true" />
-                  <span className="text-sm">{t(`experience.${exp.key}.period`)}</span>
-                </div>
-              </div>
+				<div className="relative">
+					{/* Timeline spine */}
+					<div
+						className="absolute left-0 top-0 bottom-0 w-px hidden md:block"
+						style={{
+							background:
+								"linear-gradient(to bottom, transparent 0%, rgba(99,102,241,0.3) 15%, rgba(99,102,241,0.3) 85%, transparent 100%)",
+						}}
+						aria-hidden="true"
+					/>
 
-              <ul className="space-y-3 mb-6">
-                {(t(`experience.${exp.key}.description`, {
-                  returnObjects: true,
-                }) as string[]).map((item, index) => (
-                  <li
-                    key={`${exp.key}-desc-${index}`}
-                    className="text-gray-300 leading-relaxed flex gap-3"
-                  >
-                    <span className="text-cyan-400 flex-shrink-0" aria-hidden="true">
-                      •
-                    </span>
-                    <span>{item}</span>
-                  </li>
-                ))}
-              </ul>
+					<div className="space-y-8 md:pl-10">
+						{experiences.map((exp, index) => (
+							<motion.article
+								key={exp.key}
+								initial={{ opacity: 0, x: -28 }}
+								whileInView={{ opacity: 1, x: 0 }}
+								viewport={{ once: true, margin: "-80px" }}
+								transition={{
+									duration: 0.55,
+									delay: index * 0.08,
+									ease: [0.22, 1, 0.36, 1],
+								}}
+								className="relative bg-surface-raised border border-white/5 rounded-2xl p-6 md:p-8 hover:border-primary/30 transition-all duration-500 hover:shadow-[0_0_40px_rgba(99,102,241,0.08)]"
+							>
+								{/* Timeline dot */}
+								<div
+									className="absolute -left-[2.6rem] top-8 w-3 h-3 rounded-full bg-primary/70 border-2 border-surface hidden md:block"
+									aria-hidden="true"
+								/>
 
-              <div>
-                <h4 className="text-sm font-semibold text-cyan-400 mb-2 uppercase tracking-wider">
-                  {t('experience.technologies')}
-                </h4>
-                <p className="text-gray-400 text-sm">{exp.technologies}</p>
-              </div>
-            </article>
-          ))}
-        </div>
-      </div>
-    </section>
-  )
+								<div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-5">
+									<div>
+										<h3 className="font-display font-bold text-xl text-text mb-2">
+											{t(`experience.${exp.key}.position`)}
+										</h3>
+										<div className="flex flex-wrap items-center gap-4 text-muted text-sm">
+											<div className="flex items-center gap-1.5">
+												<Briefcase
+													className="w-3.5 h-3.5 text-primary"
+													aria-hidden="true"
+												/>
+												<span>{t(`experience.${exp.key}.company`)}</span>
+											</div>
+											<div className="flex items-center gap-1.5">
+												<MapPin
+													className="w-3.5 h-3.5 text-primary"
+													aria-hidden="true"
+												/>
+												<span>
+													{t(`experience.${exp.key}.location`)} (
+													{t(`experience.${exp.key}.type`)})
+												</span>
+											</div>
+										</div>
+									</div>
+									<div className="flex items-center gap-1.5 whitespace-nowrap">
+										<span className="flex items-center gap-1.5 bg-primary/10 text-primary border border-primary/20 rounded-full px-3 py-1 text-xs font-medium">
+											<Calendar className="w-3 h-3" aria-hidden="true" />
+											{t(`experience.${exp.key}.period`)}
+										</span>
+									</div>
+								</div>
+
+								<ul className="space-y-2.5 mb-6">
+									{(
+										t(`experience.${exp.key}.description`, {
+											returnObjects: true,
+										}) as string[]
+									).map((item, i) => (
+										<li
+											key={`${exp.key}-desc-${i}`}
+											className="text-muted leading-relaxed flex gap-3 text-sm"
+										>
+											<span
+												className="text-primary flex-shrink-0 mt-0.5"
+												aria-hidden="true"
+											>
+												▸
+											</span>
+											<span>{item}</span>
+										</li>
+									))}
+								</ul>
+
+								<div>
+									<h4 className="text-xs font-semibold text-primary mb-2 uppercase tracking-widest">
+										{t("experience.technologies")}
+									</h4>
+									<p className="text-muted text-xs leading-relaxed">
+										{exp.technologies}
+									</p>
+								</div>
+							</motion.article>
+						))}
+					</div>
+				</div>
+			</div>
+		</section>
+	);
 }
