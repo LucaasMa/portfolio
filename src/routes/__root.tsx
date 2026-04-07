@@ -1,8 +1,9 @@
-import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
+import { createRootRoute, HeadContent, Link, Scripts } from '@tanstack/react-router'
+import { Home } from 'lucide-react'
 import { lazy, Suspense } from 'react'
 
-import appCss from '../styles.css?url'
 import '../i18n/config'
+import appCss from '../styles.css?url'
 
 const TanStackDevtools = import.meta.env.DEV
   ? lazy(() =>
@@ -21,6 +22,7 @@ const TanStackRouterDevtoolsPanel = import.meta.env.DEV
   : () => null
 
 export const Route = createRootRoute({
+  notFoundComponent: NotFound,
   head: () => ({
     meta: [
       {
@@ -100,6 +102,27 @@ export const Route = createRootRoute({
 
   shellComponent: RootDocument,
 })
+
+function NotFound() {
+  return (
+    <div className="min-h-screen bg-slate-900 flex items-center justify-center px-6">
+      <div className="text-center">
+        <h1 className="text-8xl font-black text-cyan-500 mb-4">404</h1>
+        <h2 className="text-2xl font-bold text-white mb-4">Page Not Found</h2>
+        <p className="text-gray-400 mb-8 max-w-md">
+          The page you're looking for doesn't exist or has been moved.
+        </p>
+        <Link
+          to="/"
+          className="inline-flex items-center gap-2 px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-white font-semibold rounded-lg transition-all duration-300"
+        >
+          <Home className="w-5 h-5" />
+          Back to Home
+        </Link>
+      </div>
+    </div>
+  )
+}
 
 function RootDocument({ children }: { children: React.ReactNode }) {
   return (
