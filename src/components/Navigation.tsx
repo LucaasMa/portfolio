@@ -1,106 +1,132 @@
-import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
+import { cn } from "@/lib/cn";
 import LanguageSwitcher from "./LanguageSwitcher";
 
-export default function Navigation() {
-	const { t } = useTranslation();
-	const [isMenuOpen, setIsMenuOpen] = useState(false);
-	const [isScrolled, setIsScrolled] = useState(false);
+const NAV_ITEMS = [
+	{ id: "work", index: "01", key: "nav.work" },
+	{ id: "stack", index: "02", key: "nav.stack" },
+	{ id: "projects", index: "03", key: "nav.projects" },
+	{ id: "contact", index: "04", key: "nav.contact" },
+] as const;
 
+export default function Navigation() {
+	const { t, i18n } = useTranslation();
+	const prefersReducedMotion = usePrefersReducedMotion();
+	const [progress, setProgress] = useState(0);
+	const [activeId, setActiveId] = useState<string | null>(null);
+
+	// One scroll handler drives both the reading-progress rule and the
+	// active nav item — cheaper than a listener plus an observer, and the
+	// two can never disagree about where the reader is.
 	useEffect(() => {
-		const handleScroll = () => {
-			setIsScrolled(window.scrollY > 50);
+		let frame = 0;
+
+		const measure = () => {
+			frame = 0;
+			const doc = document.documentElement;
+			const span = doc.scrollHeight - doc.clientHeight;
+			setProgress(span > 0 ? (doc.scrollTop / span) * 100 : 0);
+
+			const mark = window.innerHeight * 0.35;
+			let current: string | null = null;
+			for (const item of NAV_ITEMS) {
+				const el = document.getElementById(item.id);
+				if (el && el.getBoundingClientRect().top <= mark) current = item.id;
+			}
+			setActiveId(current);
 		};
-		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
+
+		const onScroll = () => {
+			if (frame === 0) frame = requestAnimationFrame(measure);
+		};
+
+		measure();
+		window.addEventListener("scroll", onScroll, { passive: true });
+		window.addEventListener("resize", onScroll, { passive: true });
+		return () => {
+			if (frame) cancelAnimationFrame(frame);
+			window.removeEventListener("scroll", onScroll);
+			window.removeEventListener("resize", onScroll);
+		};
 	}, []);
 
-	const navItems = [
-		{ label: t("nav.experience"), href: "#experience" },
-		{ label: t("nav.skills"), href: "#skills" },
-		{ label: t("nav.projects"), href: "#projects" },
-		{ label: t("nav.contact"), href: "#contact" },
-	];
+	const scrollBehavior: ScrollBehavior = prefersReducedMotion
+		? "auto"
+		: "smooth";
 
 	const handleNavClick = (
 		e: React.MouseEvent<HTMLAnchorElement>,
-		href: string,
+		id: string,
 	) => {
 		e.preventDefault();
-		setIsMenuOpen(false);
-		const element = document.querySelector(href);
-		element?.scrollIntoView({ behavior: "smooth" });
+		const el = document.getElementById(id);
+		if (!el) return;
+		const top = el.getBoundingClientRect().top + window.scrollY - 52;
+		window.scrollTo({ top, behavior: scrollBehavior });
 	};
+
+	// Filenames are kept as-is; the space in the EN one is encoded here.
+	const resumeHref =
+		i18n.language === "pt"
+			? "/curriculoLucasMauricio.pdf"
+			: encodeURI("/Lucas_Mauricio_Software Engineer_Resume.pdf");
 
 	return (
 		<nav
-			className="fixed top-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 w-auto"
-			aria-label="Main navigation"
+			aria-label={t("a11y.mainNav")}
+			className="fixed inset-x-0 top-0 z-50 bg-ink text-text-invert"
 		>
-			<div
-				className={`glass rounded-full px-5 py-3 flex items-center gap-2 transition-all duration-300 whitespace-nowrap ${
-					isScrolled ? "bg-surface/60" : ""
-				}`}
-			>
-				<button
-					type="button"
-					onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-					className="font-display font-black text-xl text-text hover:text-primary transition-colors focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background rounded-lg px-2 mr-2 cursor-pointer"
-					aria-label="Go to top"
-				>
-					LM
-				</button>
+			<div className="flex flex-wrap items-center justify-between gap-x-gutter gap-y-2 px-gutter py-2.5 font-mono text-meta uppercase">
+				<a href="#top" className="whitespace-nowrap">
+					Lucas Mauricio
+				</a>
 
-				<div className="hidden md:flex items-center gap-1">
-					{navItems.map((item) => (
-						<a
-							key={item.href}
-							href={item.href}
-							onClick={(e) => handleNavClick(e, item.href)}
-							className="text-muted hover:text-text transition-colors duration-200 font-medium text-sm px-3 py-1.5 rounded-full hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1 focus:ring-offset-background"
-						>
-							{item.label}
-						</a>
-					))}
-				</div>
+				<ul className="flex flex-wrap items-center gap-x-5 gap-y-2">
+					{NAV_ITEMS.map((item) => {
+						const isActive = activeId === item.id;
+						return (
+							<li key={item.id}>
+								<a
+									href={`#${item.id}`}
+									onClick={(e) => handleNavClick(e, item.id)}
+									aria-current={isActive ? "true" : undefined}
+									className={cn(
+										"whitespace-nowrap border-b pb-0.5 transition-colors",
+										isActive
+											? "border-accent text-text-invert"
+											: "border-transparent text-text-invert/60 hover:text-text-invert",
+									)}
+								>
+									{item.index} {t(item.key)}
+								</a>
+							</li>
+						);
+					})}
+				</ul>
 
-				<div className="hidden md:flex items-center ml-2">
-					<LanguageSwitcher />
-				</div>
-
-				<div className="md:hidden flex items-center gap-2 ml-2">
-					<LanguageSwitcher />
-					<button
-						type="button"
-						onClick={() => setIsMenuOpen(!isMenuOpen)}
-						className="text-muted hover:text-text p-1.5 hover:bg-white/5 rounded-full transition-colors focus:outline-none focus:ring-2 focus:ring-primary"
-						aria-label={isMenuOpen ? "Close menu" : "Open menu"}
-						aria-expanded={isMenuOpen}
+				<div className="flex items-center gap-4">
+					<a
+						href={resumeHref}
+						download
+						className="border-b border-accent pb-0.5"
 					>
-						{isMenuOpen ? (
-							<X className="w-5 h-5" aria-hidden="true" />
-						) : (
-							<Menu className="w-5 h-5" aria-hidden="true" />
-						)}
-					</button>
+						{t("nav.resume")}
+					</a>
+					<LanguageSwitcher />
 				</div>
 			</div>
 
-			{isMenuOpen && (
-				<div className="md:hidden mt-2 glass rounded-2xl px-4 py-4 flex flex-col gap-1">
-					{navItems.map((item) => (
-						<a
-							key={item.href}
-							href={item.href}
-							onClick={(e) => handleNavClick(e, item.href)}
-							className="text-muted hover:text-text transition-colors duration-200 font-medium text-sm px-3 py-2.5 rounded-xl hover:bg-white/5 focus:outline-none focus:ring-2 focus:ring-primary"
-						>
-							{item.label}
-						</a>
-					))}
-				</div>
-			)}
+			{/* Reading progress. A 2px rule, not a bar — it belongs to the
+			    masthead rather than floating over the page. */}
+			<div className="h-0.5 bg-rule-invert">
+				<div
+					className="h-0.5 bg-accent"
+					style={{ width: `${progress}%` }}
+					aria-hidden="true"
+				/>
+			</div>
 		</nav>
 	);
 }

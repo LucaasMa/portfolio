@@ -1,116 +1,129 @@
 {
 	"nav": {
-		"about": "About",
-		"experience": "Experience",
-		"skills": "Skills",
+		"work": "Work",
+		"stack": "Stack",
+		"projects": "Projects",
 		"contact": "Contact",
-		"projects": "Projects"
+		"resume": "Resume"
 	},
 	"hero": {
-		"greeting": "Hi, I'm",
-		"name": "Lucas Mauricio",
-		"title": "Front-end UI Developer",
-		"description": "Front-end UI Developer with 3+ years of experience specializing in building pixel-perfect, responsive user interfaces using React and Next.js. Strong focus on translating Figma designs into clean, maintainable code with high visual accuracy. Experienced in responsive layouts, accessibility best practices, performance optimization, and UI-focused development. Comfortable working independently in remote environments and collaborating closely with designers to deliver polished user experiences.",
-		"cta": "Get in touch",
-		"viewResume": "View Resume"
-	},
-	"about": {
-		"title": "About Me",
-		"intro": "Experienced in responsive layouts, accessibility best practices, performance optimization, and UI-focused development. Comfortable working independently in remote environments and collaborating closely with designers to deliver polished user experiences."
+		"bio": "Front-end developer, four years in React and its ecosystem. Government portals, real-time data platforms and AI training environments for clients including Microsoft and Amazon.",
+		"stats": {
+			"coverage": "Test coverage",
+			"load": "Load time",
+			"devs": "Devs upskilled"
+		},
+		"videoCaption": "Fig. 00 — Code at shallow focus",
+		"available": "Open to full-time remote"
 	},
 	"experience": {
-		"title": "Work Experience",
-		"present": "Present",
-		"technologies": "Technologies",
+		"title": "Track record",
+		"scrollHint": "Drag or use arrows",
 		"turing": {
-			"position": "RL GYM - Front End (React) Developer",
 			"company": "Turing",
-			"location": "Remote",
-			"type": "Remote",
-			"period": "Jan 2025 - Present",
+			"position": "RL Gym — Front-end Developer (React)",
+			"meta": "Remote, US · Contract",
+			"period": "Jan 2025 — Present",
+			"shot": "RL Gym sandbox interface — screenshot",
 			"description": [
-				"Built a Next.js-based interface for AI reinforcement learning workflows, delivering production-ready features within compressed timelines by rapidly iterating on UI components and meeting 100% of sprint deadlines.",
-				"Designed and implemented the prompt engineering and assertion testing pipeline, enabling AI agents to autonomously validate application behavior and reducing manual QA effort by streamlining the end-to-end testing process.",
-				"Provided ongoing maintenance and support for the internal tooling library, resolving critical bugs and improving developer experience for cross-functional teams working on AI testing infrastructure."
+				"Production-ready sandbox environments for AI agent training, serving clients such as Microsoft and Amazon.",
+				"Co-led projects: requirements, task assignment, progress and reviews in the lead's absence.",
+				"Cut manual QA effort by 50% with a prompt-engineering and assertion-testing pipeline.",
+				"Met 100% of sprint deadlines after introducing structured AI tooling (Cursor) with team guidelines."
 			]
 		},
 		"cpqd": {
-			"position": "Front-End Developer",
 			"company": "CPQD",
-			"location": "Campinas-SP",
-			"type": "Hybrid",
-			"period": "Dec 2022 - Present",
+			"position": "Front-end Developer",
+			"meta": "Campinas-SP · Hybrid",
+			"period": "Nov 2023 — Present",
+			"shot": "INSPIRE government portal — screenshot",
 			"description": [
-				"Developed a real-time demo interface for a voice biometrics product using React, WebSockets, and ApexCharts, enabling live data visualization and accelerating technical validation with clients and stakeholders.",
-				"Worked on the INSPIRE project, a government initiative in partnership with the Brazilian Ministry of Management and Innovation (MGI), developing a high-performance and accessible news portal that met strict technical and compliance requirements.",
-				"Contributed to the evolution of a proprietary Design System, standardizing reusable components and increasing team productivity while ensuring consistency between UX and Front-end development.",
-				"Refactored a legacy license server interface by migrating class-based components to functional components and converting JavaScript to TypeScript, significantly improving code maintainability, readability, and scalability.",
-				"Integrated RESTful APIs by consuming technical documentation and collaborating closely with backend teams to ensure data consistency, performance, and alignment with product requirements.",
-				"Implemented automated tests in React applications using Jest, Vitest, and React Testing Library, increasing application reliability and test coverage across critical user flows.",
-				"Edited and maintained Jenkins CI/CD pipelines for Front-end applications, automating build, test, and deployment processes and improving delivery quality.",
-				"Acted as co-host of the Front-end Chapter, organizing weekly meetings, presenting technical topics, and fostering knowledge sharing across the Front-end team."
+				"Shipped the INSPIRE government portal with the Brazilian Ministry of Management and Innovation, end to end, under strict WCAG and performance requirements.",
+				"Raised critical-flow test coverage past 85% with Jest, Vitest, React Testing Library and Playwright.",
+				"Built a real-time voice-biometrics visualization with React, WebSockets and ApexCharts — top client satisfaction score.",
+				"Evolved the proprietary Design System used across 30+ applications; host of the internal Frontend Chapter."
+			]
+		},
+		"cpqdIntern": {
+			"company": "CPQD",
+			"position": "Front-end Development Intern",
+			"meta": "Campinas-SP · Hybrid",
+			"period": "Dec 2022 — Nov 2023",
+			"shot": "Billing module — screenshot",
+			"description": [
+				"Delivered the billing and debt-negotiation module of the Billing project from kickoff to closure.",
+				"Reduced rework across frontend, backend and design through pair programming and continuous alignment.",
+				"Promoted to full-time Frontend Developer at the end of the internship."
 			]
 		},
 		"mmarketplaces": {
-			"position": "Front-End Developer",
 			"company": "MMarketplaces",
-			"location": "Remote",
-			"type": "Freelance",
-			"period": "Dec 2023 - Apr 2024",
+			"position": "Front-end Developer",
+			"meta": "Remote · Freelance",
+			"period": "Dec 2023 — Apr 2024",
+			"shot": "Seller dashboard — screenshot",
 			"description": [
-				"Led the modernization of the application by migrating the system to React, improving maintainability and preparing the codebase for future scalability.",
-				"Implemented basic SEO optimizations (semantic HTML, metadata, performance improvements), resulting in approximately 20% increase in site visibility.",
-				"Translated UI designs into pixel-perfect React and Next.js interfaces, ensuring accurate spacing, typography, and layout consistency across desktop, tablet, and mobile devices.",
-				"Developed a new interactive dashboard using ApexCharts, enhancing data visualization and enabling better operational insights for users.",
-				"Designed and implemented a fully responsive, mobile-first interface aligned with the company's visual identity, significantly improving usability and user experience.",
-				"Optimized integrations with the Bling API, reducing application load time by approximately 90% and greatly enhancing performance.",
-				"Developed a chat feature integrated with the Mercado Livre API, enabling more efficient and centralized customer support."
+				"Cut application load time by 90% by optimizing Bling and Mercado Livre API integrations with caching strategies.",
+				"Led the full modernization of a legacy app to React, TypeScript and Redux.",
+				"Built an interactive ApexCharts dashboard with filters and pagination over REST APIs."
 			]
 		},
 		"hiit": {
-			"position": "Front-End Developer",
 			"company": "HIIT & Tabata",
-			"location": "Remote",
-			"type": "Remote",
-			"period": "Jul 2022 - Apr 2023",
+			"position": "Front-end Developer",
+			"meta": "Remote",
+			"period": "Jul 2022 — Apr 2023",
+			"shot": "Training app UI — screenshot",
 			"description": [
-				"Deepened expertise in front-end technologies such as React, JavaScript, CSS, and MUI (Material UI).",
-				"Developed responsive and accessible interfaces focused on the experience of trainers.",
-				"Contributed directly to enhancing the user experience by applying usability and design best practices."
+				"Shipped accessible, responsive web applications with React, JavaScript, CSS3 and Material UI.",
+				"Improved platform UX with a cross-functional team, driven by direct user feedback."
 			]
 		}
 	},
 	"skills": {
-		"title": "Skills & Technologies",
+		"title": "Stack",
 		"categories": {
 			"frontend": "Frontend",
 			"styling": "Styling",
 			"testing": "Testing",
-			"tools": "Tools & Others"
+			"delivery": "Delivery"
 		}
 	},
 	"projects": {
-		"title": "Projects & Contributions",
-		"contribution": "Open Source",
-		"government": "Government",
+		"title": "Projects",
+		"eyebrowGov": "Government · Next.js · Typesense",
+		"eyebrowOss": "Open source · roadmap.sh",
 		"inspire": {
-			"title": "DestaquesGovbr - Brazilian Government News Portal",
-			"description": "Contributing to a government news discovery portal built with Next.js, TypeScript, and Typesense. Working on search features, UI improvements, and test automation."
+			"title": "DestaquesGovbr — Brazilian Government News Portal",
+			"description": "A government news discovery portal built with Next.js, TypeScript and Typesense. Work on search features, interface improvements and test automation.",
+			"shot": "DestaquesGovbr portal — screenshot"
 		},
 		"roadmap": {
-			"title": "Design System Content for Frontend Roadmap",
-			"description": "Contributed to roadmap.sh by proposing and adding Design System content to the frontend roadmap, covering typography, colors, spacing, UI components, and interaction patterns."
+			"title": "Design System Content for the Frontend Roadmap",
+			"description": "An approved contribution to roadmap.sh, proposing and adding Design System content to the frontend roadmap: typography, colors, spacing, UI components and interaction patterns.",
+			"shot": "roadmap.sh design-system node — screenshot"
 		}
 	},
 	"contact": {
-		"title": "Get In Touch",
-		"description": "I'm currently open to new opportunities. Whether you have a question or just want to say hi, feel free to reach out!",
-		"email": "Email",
-		"phone": "Phone",
-		"social": "Social"
+		"title": "Contact",
+		"blurb": "Open to conversations about complex frontend work, performance and accessibility.",
+		"copy": "Copy",
+		"copied": "Copied"
 	},
 	"footer": {
 		"rights": "All rights reserved.",
-		"built": "Built with"
+		"typeCredit": "Set in Archivo and IBM Plex Mono."
+	},
+	"a11y": {
+		"mainNav": "Main navigation",
+		"copyEmail": "Copy email to clipboard",
+		"emailCopied": "Email copied to clipboard",
+		"switchLanguage": "Switch language to Portuguese",
+		"previousRole": "Previous role",
+		"nextRole": "Next role",
+		"visitGithub": "Visit Lucas Mauricio's GitHub profile",
+		"visitLinkedin": "Visit Lucas Mauricio's LinkedIn profile",
+		"openWhatsapp": "Open WhatsApp conversation"
 	}
 }

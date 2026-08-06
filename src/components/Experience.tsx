@@ -1,174 +1,166 @@
-import { Briefcase, Calendar, MapPin } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { motion } from "motion/react";
-import ReactCountryFlag from "react-country-flag";
+import { useCallback, useEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
+import { experiences } from "@/data/experience";
+import { usePrefersReducedMotion } from "@/hooks/usePrefersReducedMotion";
+
+const GAP = 18;
 
 export default function Experience() {
-	const { t, i18n } = useTranslation();
-	const isPt = i18n.language === "pt";
+	const { t } = useTranslation();
+	const prefersReducedMotion = usePrefersReducedMotion();
+	const stripRef = useRef<HTMLDivElement>(null);
+	const [position, setPosition] = useState(0);
 
-	const experiences = [
-		{
-			key: "turing",
-			technologies:
-				"Next.js, React, TypeScript, AI/ML Tooling, Prompt Engineering, Assertion Frameworks",
-			countryCode: "US",
-			countryName: { en: "United States", pt: "Estados Unidos" },
-		},
-		{
-			key: "cpqd",
-			technologies:
-				"React, Next.js, TypeScript, TanStack Query, TanStack Router, SCSS, React Hook Form, Jest, Vitest, React Testing Library, MirageJS, i18next, WebSockets, Git, Jenkins",
-			countryCode: "BR",
-			countryName: { en: "Brazil", pt: "Brasil" },
-		},
-		{
-			key: "mmarketplaces",
-			technologies:
-				"React, TypeScript, Redux, React Router, Styled Components, Vite, Firebase, GitHub, Mercado Livre API, Bling API",
-			countryCode: "BR",
-			countryName: { en: "Brazil", pt: "Brasil" },
-		},
-		{
-			key: "hiit",
-			technologies: "React, JavaScript, CSS, MUI (Material UI)",
-			countryCode: null,
-			countryName: { en: "International", pt: "Internacional" },
-		},
-	];
+	const measure = useCallback(() => {
+		const strip = stripRef.current;
+		if (!strip) return;
+		const span = strip.scrollWidth - strip.clientWidth;
+		setPosition(span > 0 ? strip.scrollLeft / span : 1);
+	}, []);
+
+	useEffect(() => {
+		measure();
+	}, [measure]);
+
+	const nudge = (direction: 1 | -1) => {
+		const strip = stripRef.current;
+		if (!strip) return;
+		const card = strip.firstElementChild;
+		const step = card ? card.getBoundingClientRect().width + GAP : 400;
+		strip.scrollBy({
+			left: direction * step,
+			behavior: prefersReducedMotion ? "auto" : "smooth",
+		});
+	};
 
 	return (
-		<section
-			id="experience"
-			className="py-24 px-6 bg-surface"
-			aria-labelledby="experience-title"
-		>
-			<div className="max-w-6xl mx-auto">
-				<motion.div
-					initial={{ opacity: 0, y: 24 }}
-					whileInView={{ opacity: 1, y: 0 }}
-					viewport={{ once: true, margin: "-80px" }}
-					transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
-					className="mb-14"
+		<section id="work" aria-labelledby="work-title" className="py-section">
+			<div className="mx-auto flex max-w-editorial flex-wrap items-baseline justify-between gap-x-gutter gap-y-3 border-b-2 border-rule-strong px-gutter pb-3.5">
+				<h2
+					id="work-title"
+					className="font-display text-section font-extrabold uppercase"
 				>
-					<h2
-						id="experience-title"
-						className="font-display font-black text-4xl md:text-5xl text-text"
+					01 — {t("experience.title")}
+				</h2>
+				<div className="flex items-center gap-2.5">
+					<span className="font-mono text-meta uppercase text-text-muted">
+						{t("experience.scrollHint")}
+					</span>
+					<button
+						type="button"
+						onClick={() => nudge(-1)}
+						aria-label={t("a11y.previousRole")}
+						className="flex h-11 w-11 items-center justify-center border border-rule-strong transition-colors hover:bg-ink hover:text-text-invert"
 					>
-						<span className="text-primary">#</span> {t("experience.title")}
-					</h2>
-					<div className="mt-3 w-16 h-0.5 bg-gradient-to-r from-primary to-secondary" />
-				</motion.div>
+						<ArrowLeft className="h-4 w-4" aria-hidden="true" />
+					</button>
+					<button
+						type="button"
+						onClick={() => nudge(1)}
+						aria-label={t("a11y.nextRole")}
+						className="flex h-11 w-11 items-center justify-center border border-rule-strong transition-colors hover:bg-ink hover:text-text-invert"
+					>
+						<ArrowRight className="h-4 w-4" aria-hidden="true" />
+					</button>
+				</div>
+			</div>
 
-				<div className="relative">
-					{/* Timeline spine */}
-					<div
-						className="absolute left-0 top-0 bottom-0 w-px hidden md:block"
-						style={{
-							background:
-								"linear-gradient(to bottom, transparent 0%, rgba(99,102,241,0.3) 15%, rgba(99,102,241,0.3) 85%, transparent 100%)",
+			{/* A strip, not a stack: five roles read as one continuous ledger
+			    the reader pulls through, and the whole section stays one
+			    screen tall no matter how long the track record gets. */}
+			<div
+				ref={stripRef}
+				onScroll={measure}
+				className="card-strip flex gap-[18px] overflow-x-auto px-gutter py-7"
+			>
+				{experiences.map((exp, index) => (
+					<motion.article
+						key={exp.key}
+						initial={{ opacity: 0, y: 16 }}
+						whileInView={{ opacity: 1, y: 0 }}
+						viewport={{ once: true, margin: "-40px" }}
+						transition={{
+							duration: 0.45,
+							delay: Math.min(index, 3) * 0.05,
+							ease: [0.2, 0.7, 0.25, 1],
 						}}
+						className="flex w-[min(26.25rem,84vw)] shrink-0 flex-col gap-4 border border-rule bg-paper-sunk p-4"
+					>
+						<div className="aspect-[4/3] w-full overflow-hidden bg-well">
+							{exp.image ? (
+								<img
+									src={exp.image}
+									alt={t(`experience.${exp.key}.shot`)}
+									width={800}
+									height={600}
+									loading="lazy"
+									decoding="async"
+									className="h-full w-full object-cover"
+								/>
+							) : (
+								<div className="flex h-full w-full items-center justify-center border border-dashed border-rule p-4 text-center font-mono text-meta uppercase text-text-muted">
+									{t(`experience.${exp.key}.shot`)}
+								</div>
+							)}
+						</div>
+
+						<div className="flex items-baseline justify-between gap-3 font-mono text-meta uppercase text-text-muted">
+							<span className="text-accent">
+								{String(index + 1).padStart(2, "0")}
+							</span>
+							<span>{t(`experience.${exp.key}.period`)}</span>
+						</div>
+
+						<div>
+							<h3 className="font-display text-xl font-bold">
+								{t(`experience.${exp.key}.company`)}
+							</h3>
+							<p className="mt-1 font-mono text-meta uppercase text-text-muted">
+								{t(`experience.${exp.key}.position`)} ·{" "}
+								{t(`experience.${exp.key}.meta`)}
+							</p>
+						</div>
+
+						<ul className="flex flex-col gap-2.5 font-body text-sm text-text-2">
+							{(
+								t(`experience.${exp.key}.description`, {
+									returnObjects: true,
+								}) as string[]
+							).map((item) => (
+								<li key={item.slice(0, 48)} className="flex gap-2.5">
+									<span aria-hidden="true" className="shrink-0 text-accent">
+										—
+									</span>
+									<span>{item}</span>
+								</li>
+							))}
+						</ul>
+
+						<ul className="mt-auto flex flex-wrap gap-1.5 border-t border-rule pt-3">
+							{exp.technologies.map((tech) => (
+								<li
+									key={tech}
+									className="bg-chip px-2 py-1 font-mono text-chip uppercase text-text-muted"
+								>
+									{tech}
+								</li>
+							))}
+						</ul>
+					</motion.article>
+				))}
+			</div>
+
+			{/* Position rule — tells the reader there is more to the right
+			    without a scrollbar being the only signal. */}
+			<div className="mx-auto max-w-editorial px-gutter">
+				<div className="h-0.5 bg-rule">
+					<div
+						className="h-0.5 bg-ink transition-[width] duration-150"
+						style={{ width: `${22 + position * 78}%` }}
 						aria-hidden="true"
 					/>
-
-					<div className="space-y-8 md:pl-10">
-						{experiences.map((exp, index) => (
-							<motion.article
-								key={exp.key}
-								initial={{ opacity: 0, x: -28 }}
-								whileInView={{ opacity: 1, x: 0 }}
-								viewport={{ once: true, margin: "-80px" }}
-								transition={{
-									duration: 0.55,
-									delay: index * 0.08,
-									ease: [0.22, 1, 0.36, 1],
-								}}
-								className="relative bg-surface-raised border border-white/5 rounded-2xl p-6 md:p-8 hover:border-primary/30 transition-all duration-500 hover:shadow-[0_0_40px_rgba(99,102,241,0.08)]"
-							>
-								{/* Timeline dot */}
-								<div
-									className="absolute -left-[2.6rem] top-8 w-3 h-3 rounded-full bg-primary/70 border-2 border-surface hidden md:block"
-									aria-hidden="true"
-								/>
-
-								<div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-5">
-									<div>
-										<h3 className="font-display font-bold text-xl text-text mb-2">
-											{t(`experience.${exp.key}.position`)}
-										</h3>
-										<div className="flex flex-wrap items-center gap-4 text-muted text-sm">
-											<div className="flex items-center gap-1.5">
-												<Briefcase
-													className="w-3.5 h-3.5 text-primary"
-													aria-hidden="true"
-												/>
-												<span>{t(`experience.${exp.key}.company`)}</span>
-											</div>
-											<div className="flex items-center gap-1.5">
-												<MapPin
-													className="w-3.5 h-3.5 text-primary"
-													aria-hidden="true"
-												/>
-												<span>
-													{t(`experience.${exp.key}.location`)} (
-													{t(`experience.${exp.key}.type`)})
-												</span>
-											</div>
-										</div>
-									</div>
-									<div className="flex items-center gap-2 whitespace-nowrap flex-wrap justify-end">
-										<span className="flex items-center gap-1.5 bg-white/5 border border-white/10 rounded-full px-3 py-1 text-xs font-medium text-muted">
-											{exp.countryCode ? (
-												<ReactCountryFlag
-													countryCode={exp.countryCode}
-													svg
-													style={{ width: "1.1em", height: "1.1em" }}
-													aria-label={isPt ? exp.countryName.pt : exp.countryName.en}
-												/>
-											) : (
-												<span aria-hidden="true">🌐</span>
-											)}
-											<span>- {isPt ? exp.countryName.pt : exp.countryName.en}</span>
-										</span>
-										<span className="flex items-center gap-1.5 bg-primary/10 text-primary border border-primary/20 rounded-full px-3 py-1 text-xs font-medium">
-											<Calendar className="w-3 h-3" aria-hidden="true" />
-											{t(`experience.${exp.key}.period`)}
-										</span>
-									</div>
-								</div>
-
-								<ul className="space-y-2.5 mb-6">
-									{(
-										t(`experience.${exp.key}.description`, {
-											returnObjects: true,
-										}) as string[]
-									).map((item, i) => (
-										<li
-											key={`${exp.key}-desc-${i}`}
-											className="text-muted leading-relaxed flex gap-3 text-sm"
-										>
-											<span
-												className="text-primary flex-shrink-0 mt-0.5"
-												aria-hidden="true"
-											>
-												▸
-											</span>
-											<span>{item}</span>
-										</li>
-									))}
-								</ul>
-
-								<div>
-									<h4 className="text-xs font-semibold text-primary mb-2 uppercase tracking-widest">
-										{t("experience.technologies")}
-									</h4>
-									<p className="text-muted text-xs leading-relaxed">
-										{exp.technologies}
-									</p>
-								</div>
-							</motion.article>
-						))}
-					</div>
 				</div>
 			</div>
 		</section>
