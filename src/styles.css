@@ -1,163 +1,252 @@
-@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&display=swap");
-
 @import "tailwindcss";
 
-@theme {
-	--color-background: #030712;
-	--color-surface: #0d1117;
-	--color-surface-raised: #0f172a;
-	--color-primary: #6366f1;
-	--color-primary-hover: #4f46e5;
-	--color-secondary: #8b5cf6;
-	--color-accent: #38bdf8;
-	--color-text: #f1f5f9;
-	--color-muted: #94a3b8;
-	--font-display: "Syne", system-ui, sans-serif;
-	--font-body: "DM Sans", system-ui, sans-serif;
+/* ============================================================
+   Fonts — self-hosted (no third-party round trip)
+
+   Archivo carries the display and UI voice; IBM Plex Mono the
+   micro-copy; Instrument Sans the running body copy.
+
+   unicode-range values are the standard Google Fonts splits.
+   ============================================================ */
+
+@font-face {
+	font-family: "Archivo";
+	font-style: normal;
+	font-weight: 400 800;
+	font-display: swap;
+	src: url("/fonts/archivo-latin-variable-normal.woff2") format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+		U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+		U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
+
+@font-face {
+	font-family: "Archivo";
+	font-style: normal;
+	font-weight: 400 800;
+	font-display: swap;
+	src: url("/fonts/archivo-latin-ext-variable-normal.woff2") format("woff2");
+	unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7,
+		U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F,
+		U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F,
+		U+A720-A7FF;
+}
+
+@font-face {
+	font-family: "Instrument Sans";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("/fonts/instrument-sans-latin-400-normal.woff2") format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+		U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+		U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+	font-family: "Instrument Sans";
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url("/fonts/instrument-sans-latin-500-normal.woff2") format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+		U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+		U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+	font-family: "IBM Plex Mono";
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("/fonts/ibm-plex-mono-latin-400-normal.woff2") format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+		U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+		U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+	font-family: "IBM Plex Mono";
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url("/fonts/ibm-plex-mono-latin-500-normal.woff2") format("woff2");
+	unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6,
+		U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122,
+		U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+/* Metric-matched fallbacks — suppress CLS during swap */
+
+@font-face {
+	font-family: "Archivo Fallback";
+	src: local("Helvetica Neue"), local("Arial"), local("Segoe UI");
+	size-adjust: 100%;
+	ascent-override: 94%;
+	descent-override: 24%;
+	line-gap-override: 0%;
+}
+
+/* ============================================================
+   Design tokens — "Ledger"
+
+   White paper, ink rules, one burnt-amber accent. Hierarchy is
+   carried by weight and 2px rules, never by colour fields.
+
+   Contrast on --color-paper (measured):
+     text          17.9:1  AAA
+     text-2         9.7:1  AAA
+     text-muted     4.9:1  AA
+     accent         5.6:1  AA
+   On --color-ink:
+     text-invert   17.9:1  AAA
+     invert-muted   5.3:1  AA
+   ============================================================ */
+
+@theme {
+	/* Surfaces */
+	--color-paper: #ffffff;
+	--color-paper-sunk: #faf9f7;
+	--color-chip: #f0eee8;
+	--color-well: #eeece6;
+	--color-ink: #111111;
+
+	/* Text */
+	--color-text: #111111;
+	--color-text-2: #3a3a3a;
+	--color-text-muted: #6a6a6a;
+	--color-text-invert: #ffffff;
+	--color-text-invert-muted: #9a9a9a;
+
+	/* Accent — one burnt amber */
+	--color-accent: #b45309;
+
+	/* Rules */
+	--color-rule: #e2e0da;
+	--color-rule-strong: #111111;
+	--color-rule-invert: #2a2a2a;
+
+	/* Type scale */
+	--text-meta: 0.65625rem;
+	--text-meta--line-height: 1.4;
+	--text-meta--letter-spacing: 0.14em;
+
+	--text-chip: 0.59375rem;
+	--text-chip--line-height: 1.4;
+	--text-chip--letter-spacing: 0.08em;
+
+	--text-xs: 0.8125rem;
+	--text-xs--line-height: 1.5;
+
+	--text-sm: 0.9rem;
+	--text-sm--line-height: 1.55;
+
+	--text-base: 1rem;
+	--text-base--line-height: 1.6;
+
+	--text-lg: 1.0625rem;
+	--text-lg--line-height: 1.6;
+
+	--text-xl: 1.4rem;
+	--text-xl--line-height: 1.15;
+
+	--text-2xl: 1.7rem;
+	--text-2xl--line-height: 1.1;
+
+	--text-stat: 1.7rem;
+	--text-stat--line-height: 1;
+	--text-stat--letter-spacing: -0.03em;
+
+	--text-section: clamp(1.4rem, 3vw, 2.5rem);
+	--text-section--line-height: 1.05;
+	--text-section--letter-spacing: -0.035em;
+
+	--text-project: clamp(1.3rem, 2.4vw, 2rem);
+	--text-project--line-height: 1.1;
+	--text-project--letter-spacing: -0.03em;
+
+	--text-mega: clamp(2.6rem, 8vw, 7.4rem);
+	--text-mega--line-height: 0.86;
+	--text-mega--letter-spacing: -0.045em;
+
+	--text-email: clamp(1.4rem, 5vw, 4.2rem);
+	--text-email--line-height: 1;
+	--text-email--letter-spacing: -0.04em;
+
+	/* Families */
+	--font-display: "Archivo", "Archivo Fallback", system-ui, sans-serif;
+	--font-body: "Instrument Sans", system-ui, sans-serif;
+	--font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+	/* Frame */
+	--container-measure: 46ch;
+	--container-editorial: 87.5rem;
+
+	/* Rhythm */
+	--spacing-gutter: clamp(1rem, 3vw, 2.25rem);
+	--spacing-section: clamp(3rem, 6vw, 6rem);
+
+	/* The ledger is square */
+	--radius-sm: 0px;
+	--radius-md: 0px;
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
 
 body {
-	@apply m-0 bg-background text-text;
-	font-family: var(--font-body);
+	@apply m-0 bg-paper text-text;
+	font-family: var(--font-display);
+	font-size: var(--text-base);
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
+	text-rendering: optimizeLegibility;
 }
 
-code {
-	font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+code,
+kbd,
+samp,
+pre {
+	font-family: var(--font-mono);
 }
 
-/* === Keyframes === */
-
-@keyframes orb-float-1 {
-	0%,
-	100% {
-		transform: translate(0, 0) scale(1);
-	}
-	33% {
-		transform: translate(30px, -40px) scale(1.05);
-	}
-	66% {
-		transform: translate(-20px, 20px) scale(0.97);
-	}
+::selection {
+	background: var(--color-accent);
+	color: #ffffff;
 }
 
-@keyframes orb-float-2 {
-	0%,
-	100% {
-		transform: translate(0, 0) scale(1);
-	}
-	40% {
-		transform: translate(-35px, 25px) scale(1.08);
-	}
-	70% {
-		transform: translate(20px, -30px) scale(0.95);
-	}
+:focus-visible {
+	outline: 2px solid var(--color-accent);
+	outline-offset: 3px;
 }
 
-@keyframes grid-pulse {
-	0%,
-	100% {
-		opacity: 0.6;
+/* The experience strip. Snap is deliberately off: it fights
+   programmatic scrolling from the arrow controls. */
+.card-strip {
+	scrollbar-width: thin;
+	scrollbar-color: #c9c5bc transparent;
+}
+
+.card-strip::-webkit-scrollbar {
+	height: 6px;
+}
+
+.card-strip::-webkit-scrollbar-thumb {
+	background: #c9c5bc;
+}
+
+/* ============================================================
+   Reduced motion
+   ============================================================ */
+
+@media (prefers-reduced-motion: reduce) {
+	*,
+	*::before,
+	*::after {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+		scroll-behavior: auto !important;
 	}
-	50% {
-		opacity: 1;
-	}
-}
-
-@keyframes spin-slow {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
-}
-
-@keyframes spin-slow-reverse {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(-360deg);
-	}
-}
-
-@keyframes spin-medium {
-	from {
-		transform: rotate(0deg);
-	}
-	to {
-		transform: rotate(360deg);
-	}
-}
-
-@keyframes glow-pulse {
-	0%,
-	100% {
-		box-shadow:
-			0 0 20px rgba(99, 102, 241, 0.4),
-			0 0 40px rgba(99, 102, 241, 0.15);
-	}
-	50% {
-		box-shadow:
-			0 0 40px rgba(99, 102, 241, 0.8),
-			0 0 80px rgba(139, 92, 246, 0.3),
-			0 0 120px rgba(99, 102, 241, 0.1);
-	}
-}
-
-@keyframes fade-up {
-	from {
-		opacity: 0;
-		transform: translateY(24px);
-	}
-	to {
-		opacity: 1;
-		transform: translateY(0);
-	}
-}
-
-/* === Utility classes === */
-
-.animate-orb-1 {
-	animation: orb-float-1 12s ease-in-out infinite;
-}
-
-.animate-orb-2 {
-	animation: orb-float-2 15s ease-in-out infinite;
-}
-
-.animate-spin-slow {
-	animation: spin-slow 20s linear infinite;
-	transform-origin: 200px 200px;
-}
-
-.animate-spin-slow-reverse {
-	animation: spin-slow-reverse 28s linear infinite;
-	transform-origin: 200px 200px;
-}
-
-.animate-spin-medium {
-	animation: spin-medium 14s linear infinite;
-	transform-origin: 200px 200px;
-}
-
-.animate-glow-pulse {
-	animation: glow-pulse 3s ease-in-out infinite;
-}
-
-.bg-blueprint-grid {
-	background-image:
-		linear-gradient(rgba(99, 102, 241, 0.035) 1px, transparent 1px),
-		linear-gradient(90deg, rgba(99, 102, 241, 0.035) 1px, transparent 1px);
-	background-size: 64px 64px;
-	animation: grid-pulse 8s ease-in-out infinite;
-}
-
-.glass {
-	background: rgba(255, 255, 255, 0.04);
-	backdrop-filter: blur(16px);
-	-webkit-backdrop-filter: blur(16px);
-	border: 1px solid rgba(255, 255, 255, 0.08);
 }
