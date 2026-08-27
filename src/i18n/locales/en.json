@@ -8,23 +8,17 @@
 	},
 	"hero": {
 		"bio": "Front-end developer, four years in React and its ecosystem. Government portals, real-time data platforms and AI training environments for clients including Microsoft and Amazon.",
-		"stats": {
-			"coverage": "Test coverage",
-			"load": "Load time",
-			"devs": "Devs upskilled"
-		},
 		"videoCaption": "Fig. 00 — Code at shallow focus",
 		"available": "Open to full-time remote"
 	},
 	"experience": {
 		"title": "Track record",
-		"scrollHint": "Drag or use arrows",
 		"turing": {
 			"company": "Turing",
 			"position": "RL Gym — Front-end Developer (React)",
 			"meta": "Remote, US · Contract",
 			"period": "Jan 2025 — Present",
-			"shot": "RL Gym sandbox interface — screenshot",
+			"shot": "Illustration — agent-training sandbox environment",
 			"description": [
 				"Production-ready sandbox environments for AI agent training, serving clients such as Microsoft and Amazon.",
 				"Co-led projects: requirements, task assignment, progress and reviews in the lead's absence.",
@@ -36,8 +30,8 @@
 			"company": "CPQD",
 			"position": "Front-end Developer",
 			"meta": "Campinas-SP · Hybrid",
-			"period": "Nov 2023 — Present",
-			"shot": "INSPIRE government portal — screenshot",
+			"period": "Dec 2022 — Present",
+			"shot": "Illustration — voice biometrics over government documents",
 			"description": [
 				"Shipped the INSPIRE government portal with the Brazilian Ministry of Management and Innovation, end to end, under strict WCAG and performance requirements.",
 				"Raised critical-flow test coverage past 85% with Jest, Vitest, React Testing Library and Playwright.",
@@ -45,24 +39,12 @@
 				"Evolved the proprietary Design System used across 30+ applications; host of the internal Frontend Chapter."
 			]
 		},
-		"cpqdIntern": {
-			"company": "CPQD",
-			"position": "Front-end Development Intern",
-			"meta": "Campinas-SP · Hybrid",
-			"period": "Dec 2022 — Nov 2023",
-			"shot": "Billing module — screenshot",
-			"description": [
-				"Delivered the billing and debt-negotiation module of the Billing project from kickoff to closure.",
-				"Reduced rework across frontend, backend and design through pair programming and continuous alignment.",
-				"Promoted to full-time Frontend Developer at the end of the internship."
-			]
-		},
 		"mmarketplaces": {
 			"company": "MMarketplaces",
 			"position": "Front-end Developer",
 			"meta": "Remote · Freelance",
 			"period": "Dec 2023 — Apr 2024",
-			"shot": "Seller dashboard — screenshot",
+			"shot": "Illustration — sales dashboard and integrations",
 			"description": [
 				"Cut application load time by 90% by optimizing Bling and Mercado Livre API integrations with caching strategies.",
 				"Led the full modernization of a legacy app to React, TypeScript and Redux.",
@@ -74,7 +56,7 @@
 			"position": "Front-end Developer",
 			"meta": "Remote",
 			"period": "Jul 2022 — Apr 2023",
-			"shot": "Training app UI — screenshot",
+			"shot": "Illustration — interval training blocks",
 			"description": [
 				"Shipped accessible, responsive web applications with React, JavaScript, CSS3 and Material UI.",
 				"Improved platform UX with a cross-functional team, driven by direct user feedback."
@@ -97,12 +79,12 @@
 		"inspire": {
 			"title": "DestaquesGovbr — Brazilian Government News Portal",
 			"description": "A government news discovery portal built with Next.js, TypeScript and Typesense. Work on search features, interface improvements and test automation.",
-			"shot": "DestaquesGovbr portal — screenshot"
+			"shot": "Illustration — news discovery portal"
 		},
 		"roadmap": {
 			"title": "Design System Content for the Frontend Roadmap",
 			"description": "An approved contribution to roadmap.sh, proposing and adding Design System content to the frontend roadmap: typography, colors, spacing, UI components and interaction patterns.",
-			"shot": "roadmap.sh design-system node — screenshot"
+			"shot": "Illustration — roadmap node graph"
 		}
 	},
 	"contact": {
@@ -120,8 +102,6 @@
 		"copyEmail": "Copy email to clipboard",
 		"emailCopied": "Email copied to clipboard",
 		"switchLanguage": "Switch language to Portuguese",
-		"previousRole": "Previous role",
-		"nextRole": "Next role",
 		"visitGithub": "Visit Lucas Mauricio's GitHub profile",
 		"visitLinkedin": "Visit Lucas Mauricio's LinkedIn profile",
 		"openWhatsapp": "Open WhatsApp conversation"

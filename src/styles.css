@@ -221,21 +221,6 @@ pre {
 	outline-offset: 3px;
 }
 
-/* The experience strip. Snap is deliberately off: it fights
-   programmatic scrolling from the arrow controls. */
-.card-strip {
-	scrollbar-width: thin;
-	scrollbar-color: #c9c5bc transparent;
-}
-
-.card-strip::-webkit-scrollbar {
-	height: 6px;
-}
-
-.card-strip::-webkit-scrollbar-thumb {
-	background: #c9c5bc;
-}
-
 /* ============================================================
    Reduced motion
    ============================================================ */

@@ -20,7 +20,7 @@ export const experiences: ExperienceEntry[] = [
 			"Prompt Engineering",
 			"Assertion Testing",
 		],
-		// image: "/media/work-turing.jpg",
+		image: "/media/work-turing.webp",
 	},
 	{
 		key: "cpqd",
@@ -35,17 +35,7 @@ export const experiences: ExperienceEntry[] = [
 			"Playwright",
 			"Jenkins CI/CD",
 		],
-		// image: "/media/work-cpqd.jpg",
-	},
-	{
-		key: "cpqdIntern",
-		technologies: [
-			"React",
-			"TypeScript",
-			"Redux",
-			"Material UI",
-			"Styled Components",
-		],
+		image: "/media/work-cpqd.webp",
 	},
 	{
 		key: "mmarketplaces",
@@ -58,6 +48,7 @@ export const experiences: ExperienceEntry[] = [
 			"Vite",
 			"Firebase",
 		],
+		image: "/media/work-mmarketplaces.webp",
 	},
 	{
 		key: "hiit",
@@ -68,5 +59,6 @@ export const experiences: ExperienceEntry[] = [
 			"Material UI (MUI)",
 			"Responsive Design",
 		],
+		image: "/media/work-hiit.webp",
 	},
 ];

@@ -26,6 +26,12 @@ export const projects: Project[] = [
 	{
 		key: "inspire",
 		eyebrowKey: "projects.eyebrowGov",
+		media: {
+			src: "/media/project-inspire.webp",
+			width: 1600,
+			height: 900,
+			altKey: "projects.inspire.shot",
+		},
 		links: [
 			{ href: "https://github.com/destaquesgovbr/portal", text: "GitHub" },
 			{
@@ -37,6 +43,12 @@ export const projects: Project[] = [
 	{
 		key: "roadmap",
 		eyebrowKey: "projects.eyebrowOss",
+		media: {
+			src: "/media/project-roadmap.webp",
+			width: 1600,
+			height: 900,
+			altKey: "projects.roadmap.shot",
+		},
 		links: [
 			{
 				href: "https://github.com/kamranahmedse/developer-roadmap/issues/9420",

@@ -8,23 +8,17 @@
 	},
 	"hero": {
 		"bio": "Desenvolvedor front-end, quatro anos em React e seu ecossistema. Portais governamentais, plataformas de dados em tempo real e ambientes de treinamento de IA para clientes como Microsoft e Amazon.",
-		"stats": {
-			"coverage": "Cobertura de testes",
-			"load": "Tempo de carga",
-			"devs": "Devs formados"
-		},
 		"videoCaption": "Fig. 00 — Código em foco raso",
 		"available": "Aberto a remoto full-time"
 	},
 	"experience": {
 		"title": "Trajetória",
-		"scrollHint": "Arraste ou use as setas",
 		"turing": {
 			"company": "Turing",
 			"position": "RL Gym — Desenvolvedor Front-end (React)",
 			"meta": "Remoto, EUA · Contrato",
 			"period": "Jan 2025 — Presente",
-			"shot": "Interface do sandbox RL Gym — captura de tela",
+			"shot": "Ilustração — ambiente sandbox de treino de agentes",
 			"description": [
 				"Ambientes sandbox prontos para produção para treinamento de agentes de IA, atendendo clientes como Microsoft e Amazon.",
 				"Co-liderança de projetos: requisitos, distribuição de tarefas, progresso e revisões na ausência do líder.",
@@ -36,8 +30,8 @@
 			"company": "CPQD",
 			"position": "Desenvolvedor Front-end",
 			"meta": "Campinas-SP · Híbrido",
-			"period": "Nov 2023 — Presente",
-			"shot": "Portal governamental INSPIRE — captura de tela",
+			"period": "Dez 2022 — Presente",
+			"shot": "Ilustração — biometria de voz sobre documentos de governo",
 			"description": [
 				"Entrega do portal INSPIRE com o Ministério da Gestão e da Inovação, de ponta a ponta, sob requisitos rigorosos de WCAG e performance.",
 				"Cobertura de testes em fluxos críticos acima de 85% com Jest, Vitest, React Testing Library e Playwright.",
@@ -45,24 +39,12 @@
 				"Evolução do Design System proprietário usado em mais de 30 aplicações; condutor do Chapter Front-end."
 			]
 		},
-		"cpqdIntern": {
-			"company": "CPQD",
-			"position": "Estagiário de Desenvolvimento Front-end",
-			"meta": "Campinas-SP · Híbrido",
-			"period": "Dez 2022 — Nov 2023",
-			"shot": "Módulo de cobrança — captura de tela",
-			"description": [
-				"Entrega do módulo de cobrança e negociação de dívidas do projeto Billing, do início ao encerramento.",
-				"Redução de retrabalho entre front-end, back-end e design via pair programming e alinhamento contínuo.",
-				"Efetivado como Desenvolvedor Front-end ao fim do estágio."
-			]
-		},
 		"mmarketplaces": {
 			"company": "MMarketplaces",
 			"position": "Desenvolvedor Front-end",
 			"meta": "Remoto · Freelance",
 			"period": "Dez 2023 — Abr 2024",
-			"shot": "Dashboard do vendedor — captura de tela",
+			"shot": "Ilustração — dashboard de vendas e integrações",
 			"description": [
 				"Redução de 90% no tempo de carregamento ao otimizar integrações com as APIs do Bling e Mercado Livre com estratégias de cache.",
 				"Liderança da modernização completa de uma aplicação legada para React, TypeScript e Redux.",
@@ -74,7 +56,7 @@
 			"position": "Desenvolvedor Front-end",
 			"meta": "Remoto",
 			"period": "Jul 2022 — Abr 2023",
-			"shot": "Interface do app de treinos — captura de tela",
+			"shot": "Ilustração — blocos de treino intervalado",
 			"description": [
 				"Aplicações web responsivas e acessíveis com React, JavaScript, CSS3 e Material UI.",
 				"Melhoria da experiência da plataforma com time multidisciplinar, a partir de feedback direto dos usuários."
@@ -97,12 +79,12 @@
 		"inspire": {
 			"title": "DestaquesGovbr — Portal de Notícias do Governo Brasileiro",
 			"description": "Portal de descoberta de notícias governamentais construído com Next.js, TypeScript e Typesense. Atuação em funcionalidades de busca, melhorias de interface e automação de testes.",
-			"shot": "Portal DestaquesGovbr — captura de tela"
+			"shot": "Ilustração — portal de descoberta de notícias"
 		},
 		"roadmap": {
 			"title": "Conteúdo de Design System para o Roadmap de Frontend",
 			"description": "Contribuição aprovada no roadmap.sh, propondo e adicionando conteúdo sobre Design System ao roadmap de frontend: tipografia, cores, espaçamento, componentes de UI e padrões de interação.",
-			"shot": "Nó de design system no roadmap.sh — captura de tela"
+			"shot": "Ilustração — grafo de nós de um roadmap"
 		}
 	},
 	"contact": {
@@ -120,8 +102,6 @@
 		"copyEmail": "Copiar e-mail para a área de transferência",
 		"emailCopied": "E-mail copiado para a área de transferência",
 		"switchLanguage": "Mudar idioma para inglês",
-		"previousRole": "Experiência anterior",
-		"nextRole": "Próxima experiência",
 		"visitGithub": "Visitar o perfil de Lucas Mauricio no GitHub",
 		"visitLinkedin": "Visitar o perfil de Lucas Mauricio no LinkedIn",
 		"openWhatsapp": "Abrir conversa no WhatsApp"
