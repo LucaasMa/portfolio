@@ -24,23 +24,6 @@ export interface Project {
 
 export const projects: Project[] = [
 	{
-		key: "inspire",
-		eyebrowKey: "projects.eyebrowGov",
-		media: {
-			src: "/media/project-inspire.webp",
-			width: 1600,
-			height: 900,
-			altKey: "projects.inspire.shot",
-		},
-		links: [
-			{ href: "https://github.com/destaquesgovbr/portal", text: "GitHub" },
-			{
-				href: "https://destaquesgovbr-portal-klvx64dufq-rj.a.run.app/",
-				text: "Portal",
-			},
-		],
-	},
-	{
 		key: "roadmap",
 		eyebrowKey: "projects.eyebrowOss",
 		media: {
@@ -53,6 +36,27 @@ export const projects: Project[] = [
 			{
 				href: "https://github.com/kamranahmedse/developer-roadmap/issues/9420",
 				text: "roadmap.sh",
+			},
+			{
+				href: "https://roadmap.sh/frontend",
+				text: "Frontend Roadmap",
+			},
+		],
+	},
+	{
+		key: "inspire",
+		eyebrowKey: "projects.eyebrowGov",
+		media: {
+			src: "/media/project-inspire.webp",
+			width: 1600,
+			height: 900,
+			altKey: "projects.inspire.shot",
+		},
+		links: [
+			{ href: "https://github.com/destaquesgovbr/portal", text: "GitHub" },
+			{
+				href: "https://portal.destaquesgovbr.sistema.gov.br/portal",
+				text: "Portal",
 			},
 		],
 	},

@@ -22,9 +22,10 @@ const TanStackRouterDevtoolsPanel = import.meta.env.DEV
 	: () => null;
 
 const SITE_URL = "https://lucasmauricio.com.br";
-const TITLE = "Lucas Mauricio | Front-end Developer";
+const TITLE =
+	"Lucas Mauricio | Frontend Software Engineer — React, Next.js & TypeScript";
 const DESCRIPTION =
-	"Front-end Developer with 4+ years of experience in React, Next.js and TypeScript. Government portals, real-time data platforms and AI training environments — with a focus on accessibility, performance and design systems.";
+	"Frontend Software Engineer with 4+ years of experience building fast, maintainable production web applications with React, Next.js, TypeScript, Design Systems, Web Performance, REST APIs, and Node.js.";
 
 export const Route = createRootRoute({
 	head: () => ({
@@ -38,8 +39,8 @@ export const Route = createRootRoute({
 			{ property: "og:description", content: DESCRIPTION },
 			{ property: "og:type", content: "website" },
 			{ property: "og:url", content: SITE_URL },
-			{ property: "og:locale", content: "pt_BR" },
-			{ property: "og:locale:alternate", content: "en_US" },
+			{ property: "og:locale", content: "en_US" },
+			{ property: "og:locale:alternate", content: "pt_BR" },
 			{ property: "og:image", content: `${SITE_URL}/og-image.png` },
 			{ property: "og:image:width", content: "1200" },
 			{ property: "og:image:height", content: "630" },
@@ -74,10 +75,10 @@ export const Route = createRootRoute({
 });
 
 function RootDocument({ children }: { children: React.ReactNode }) {
-	// `pt` matches i18n's default (src/i18n/config.ts) so SSR and the first
+	// `en` matches i18n's default (src/i18n/config.ts) so SSR and the first
 	// client render agree. LanguageSwitcher keeps this in sync afterwards.
 	return (
-		<html lang="pt">
+		<html lang="en">
 			<head>
 				<HeadContent />
 			</head>

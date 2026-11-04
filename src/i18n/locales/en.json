@@ -7,89 +7,111 @@
 		"resume": "Resume"
 	},
 	"hero": {
-		"bio": "Front-end developer, four years in React and its ecosystem. Government portals, real-time data platforms and AI training environments for clients including Microsoft and Amazon.",
+		"headline": "Frontend Software Engineer | React, Next.js, TypeScript | Design Systems, Web Performance, REST APIs & Node.js",
+		"bio": "Frontend Software Engineer with 4+ years of experience building fast, maintainable production web applications with React, Next.js, and TypeScript. Government portals, real-time data platforms, and AI agent training environments for clients including Microsoft and Amazon — with 3+ years of remote delivery in English for distributed US teams.",
+		"stats": {
+			"coverage": "Test coverage",
+			"load": "Load time",
+			"devs": "Devs upskilled"
+		},
 		"videoCaption": "Fig. 00 — Code at shallow focus",
-		"available": "Open to full-time remote"
+		"available": "Open to full-time remote (US, EU, Brazil)"
 	},
 	"experience": {
 		"title": "Track record",
-		"turing": {
-			"company": "Turing",
-			"position": "RL Gym — Front-end Developer (React)",
-			"meta": "Remote, US · Contract",
-			"period": "Jan 2025 — Present",
-			"shot": "Illustration — agent-training sandbox environment",
-			"description": [
-				"Production-ready sandbox environments for AI agent training, serving clients such as Microsoft and Amazon.",
-				"Co-led projects: requirements, task assignment, progress and reviews in the lead's absence.",
-				"Cut manual QA effort by 50% with a prompt-engineering and assertion-testing pipeline.",
-				"Met 100% of sprint deadlines after introducing structured AI tooling (Cursor) with team guidelines."
-			]
-		},
+		"scrollHint": "Drag or use arrows",
 		"cpqd": {
 			"company": "CPQD",
-			"position": "Front-end Developer",
-			"meta": "Campinas-SP · Hybrid",
-			"period": "Dec 2022 — Present",
+			"position": "Frontend Developer",
+			"meta": "Campinas, SP, Brazil · Hybrid",
+			"period": "Nov 2023 — Present",
 			"shot": "Illustration — voice biometrics over government documents",
 			"description": [
-				"Shipped the INSPIRE government portal with the Brazilian Ministry of Management and Innovation, end to end, under strict WCAG and performance requirements.",
-				"Raised critical-flow test coverage past 85% with Jest, Vitest, React Testing Library and Playwright.",
-				"Built a real-time voice-biometrics visualization with React, WebSockets and ApexCharts — top client satisfaction score.",
-				"Evolved the proprietary Design System used across 30+ applications; host of the internal Frontend Chapter."
+				"Cut a 2,200-item icon picker's open time from 1,756 ms to 136 ms and raised filtering frame rate from 30 to 60 FPS (worst frame 491 ms to 45 ms) by virtualizing rows with TanStack Virtual and moving per-item styling out of the CSS-in-JS runtime (measured under 4x CPU throttling).",
+				"Reduced screen load time from 5.4 s to 2.2 s (QA-verified; 10-image payload dropped from 4,952 kB to 809 kB) by converting pasted images to WebP in the browser, compressing uploads, and lazy-rendering rich text.",
+				"Delivered a real-time voice biometrics UI that earned the highest client satisfaction score in the portfolio, building the React interface over a live WebSocket stream with real-time charting.",
+				"Sustained 85%+ automated test coverage on critical flows by designing a layered test strategy (Jest, React Testing Library, and Playwright) wired into Jenkins CI/CD.",
+				"Contributed reusable components to the corporate Design System and packaged a standalone 25-component library (light/dark themes, Storybook) for an external partner team after stripping internal auth and API exposure.",
+				"Defined REST API contracts with backend engineers, proposed a Backend-for-Frontend (BFF) layer, unblocked OIDC/SSO user provisioning in Nextcloud via authenticated WebDAV requests, and built WCAG-accessible interfaces for Portal DestaquesGovBr (MGI / INSPIRE).",
+				"Host of the Frontend Chapter (recurring technical sessions and mentoring) and led AI-assisted coding adoption (Claude Code, Cursor) on a client project, including an internal talk and moderating the company's AI roundtable."
+			]
+		},
+		"turing": {
+			"company": "Turing",
+			"position": "Frontend Developer (React)",
+			"meta": "California, US · Remote · Contract",
+			"period": "Jan 2026 — Aug 2026",
+			"shot": "Illustration — agent-training sandbox environment",
+			"description": [
+				"Built and shipped production React and Next.js interfaces for AI agent training platforms used by enterprise clients including Microsoft and Amazon, working in an asynchronous, distributed US engineering team.",
+				"Co-led projects end-to-end alongside the tech lead — breaking requirements into scoped tasks, coordinating delivery across developers, and owning progress reporting in the lead's absence.",
+				"Shortened development cycle time under tight deadlines by introducing AI-assisted engineering workflows (Claude Code, Cursor) and documenting team-wide code-review conventions.",
+				"Collaborated daily in English (written and live) with designers, product stakeholders, and engineers across US time zones."
 			]
 		},
 		"mmarketplaces": {
 			"company": "MMarketplaces",
-			"position": "Front-end Developer",
-			"meta": "Remote · Freelance",
+			"position": "Frontend Developer",
+			"meta": "Brazil · Remote · Contract",
 			"period": "Dec 2023 — Apr 2024",
 			"shot": "Illustration — sales dashboard and integrations",
 			"description": [
-				"Cut application load time by 90% by optimizing Bling and Mercado Livre API integrations with caching strategies.",
-				"Led the full modernization of a legacy app to React, TypeScript and Redux.",
-				"Built an interactive ApexCharts dashboard with filters and pagination over REST APIs."
+				"Reduced application load time by ~90% by diagnosing redundant third-party API calls as the primary bottleneck and building a Node.js API caching layer to centralize integrations.",
+				"Led the full frontend rebuild of a legacy e-commerce analytics platform in React, TypeScript, and Redux as sole frontend developer, defining project structure, component patterns, and data-fetching architecture from scratch.",
+				"Built a responsive operational dashboard with interactive charts (ApexCharts), large filterable tables, and URL-driven pagination over live multi-marketplace data.",
+				"Designed REST endpoints normalizing responses from multiple marketplace providers into a single frontend contract."
+			]
+		},
+		"cpqdIntern": {
+			"company": "CPQD",
+			"position": "Frontend Development Intern",
+			"meta": "Campinas, SP, Brazil · Remote · Internship",
+			"period": "Dec 2022 — Nov 2023",
+			"shot": "Illustration — billing and debt-negotiation ledger module",
+			"description": [
+				"Developed the billing and debt-negotiation module of an enterprise Billing platform across its full lifecycle, from initial scaffolding to production sign-off, using React, TypeScript, Redux, and Material UI.",
+				"Practiced pair programming and rigorous code reviews alongside requirements analysts, UX designers, and backend engineers to maintain code quality and minimize rework."
 			]
 		},
 		"hiit": {
-			"company": "HIIT & Tabata",
-			"position": "Front-end Developer",
-			"meta": "Remote",
+			"company": "HIIT and Tabata",
+			"position": "Frontend Developer",
+			"meta": "Brazil · Remote · Contract",
 			"period": "Jul 2022 — Apr 2023",
 			"shot": "Illustration — interval training blocks",
 			"description": [
-				"Shipped accessible, responsive web applications with React, JavaScript, CSS3 and Material UI.",
-				"Improved platform UX with a cross-functional team, driven by direct user feedback."
+				"Built responsive, cross-browser web interfaces with React, JavaScript, SCSS, and Material UI directly from design prototypes in a cross-functional product team.",
+				"Extended the product to mobile by shipping a cross-platform React Native app with workout-management features for fitness trainers."
 			]
 		}
 	},
 	"skills": {
 		"title": "Stack",
 		"categories": {
-			"frontend": "Frontend",
-			"styling": "Styling",
+			"frontend": "Frontend & APIs",
+			"styling": "UI, Design Systems & Accessibility",
 			"testing": "Testing",
-			"delivery": "Delivery"
+			"delivery": "Delivery, CI/CD & AI Workflow"
 		}
 	},
 	"projects": {
 		"title": "Projects",
-		"eyebrowGov": "Government · Next.js · Typesense",
+		"eyebrowGov": "Federal Government · React · WCAG · Nextcloud SSO",
 		"eyebrowOss": "Open source · roadmap.sh",
-		"inspire": {
-			"title": "DestaquesGovbr — Brazilian Government News Portal",
-			"description": "A government news discovery portal built with Next.js, TypeScript and Typesense. Work on search features, interface improvements and test automation.",
-			"shot": "Illustration — news discovery portal"
-		},
 		"roadmap": {
-			"title": "Design System Content for the Frontend Roadmap",
-			"description": "An approved contribution to roadmap.sh, proposing and adding Design System content to the frontend roadmap: typography, colors, spacing, UI components and interaction patterns.",
+			"title": "Design Systems Content — roadmap.sh Frontend Roadmap",
+			"description": "Approved open-source contribution to roadmap.sh, authoring Design Systems educational content on the official Frontend Developer Roadmap (typography, color tokens, spacing scales, component libraries, and interaction patterns).",
 			"shot": "Illustration — roadmap node graph"
+		},
+		"inspire": {
+			"title": "Portal DestaquesGovBr — Brazilian Federal Government (MGI / INSPIRE)",
+			"description": "Contributed to the frontend of the Brazilian Federal Government's Portal DestaquesGovBr for the Ministry of Management and Innovation in Public Services (MGI) within the INSPIRE project — delivering WCAG-accessible React interfaces, reusable Design System components, and unblocking OIDC/SSO user provisioning in Nextcloud via authenticated WebDAV requests.",
+			"shot": "Illustration — government news discovery portal"
 		}
 	},
 	"contact": {
 		"title": "Contact",
-		"blurb": "Open to conversations about complex frontend work, performance and accessibility.",
+		"blurb": "Open to conversations about Frontend and Full-Stack roles (React, Next.js, TypeScript, Node.js), web performance, Design Systems, and accessibility.",
 		"copy": "Copy",
 		"copied": "Copied"
 	},
@@ -102,6 +124,8 @@
 		"copyEmail": "Copy email to clipboard",
 		"emailCopied": "Email copied to clipboard",
 		"switchLanguage": "Switch language to Portuguese",
+		"previousRole": "Previous role",
+		"nextRole": "Next role",
 		"visitGithub": "Visit Lucas Mauricio's GitHub profile",
 		"visitLinkedin": "Visit Lucas Mauricio's LinkedIn profile",
 		"openWhatsapp": "Open WhatsApp conversation"

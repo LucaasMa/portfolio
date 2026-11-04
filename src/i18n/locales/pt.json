@@ -7,89 +7,111 @@
 		"resume": "Currículo"
 	},
 	"hero": {
-		"bio": "Desenvolvedor front-end, quatro anos em React e seu ecossistema. Portais governamentais, plataformas de dados em tempo real e ambientes de treinamento de IA para clientes como Microsoft e Amazon.",
+		"headline": "Desenvolvedor Frontend | React, Next.js, TypeScript | Design Systems, Performance Web, APIs REST e Node.js",
+		"bio": "Desenvolvedor Frontend com mais de 4 anos de experiência construindo aplicações web rápidas e sustentáveis em produção com React, Next.js e TypeScript. Portais governamentais, plataformas de dados em tempo real e ambientes de treinamento de agentes de IA para clientes como Microsoft e Amazon — com mais de 3 anos de atuação remota em inglês com times distribuídos nos EUA.",
+		"stats": {
+			"coverage": "Cobertura de testes",
+			"load": "Tempo de carga",
+			"devs": "Devs formados"
+		},
 		"videoCaption": "Fig. 00 — Código em foco raso",
-		"available": "Aberto a remoto full-time"
+		"available": "Aberto a remoto full-time (EUA, Europa, Brasil)"
 	},
 	"experience": {
 		"title": "Trajetória",
-		"turing": {
-			"company": "Turing",
-			"position": "RL Gym — Desenvolvedor Front-end (React)",
-			"meta": "Remoto, EUA · Contrato",
-			"period": "Jan 2025 — Presente",
-			"shot": "Ilustração — ambiente sandbox de treino de agentes",
-			"description": [
-				"Ambientes sandbox prontos para produção para treinamento de agentes de IA, atendendo clientes como Microsoft e Amazon.",
-				"Co-liderança de projetos: requisitos, distribuição de tarefas, progresso e revisões na ausência do líder.",
-				"Redução de 50% no esforço manual de QA com pipeline de prompt engineering e testes de asserção.",
-				"100% dos deadlines de sprint cumpridos após estruturar o uso de ferramentas de IA (Cursor) no time."
-			]
-		},
+		"scrollHint": "Arraste ou use as setas",
 		"cpqd": {
 			"company": "CPQD",
-			"position": "Desenvolvedor Front-end",
+			"position": "Desenvolvedor Frontend",
 			"meta": "Campinas-SP · Híbrido",
-			"period": "Dez 2022 — Presente",
+			"period": "Nov 2023 — Atual",
 			"shot": "Ilustração — biometria de voz sobre documentos de governo",
 			"description": [
-				"Entrega do portal INSPIRE com o Ministério da Gestão e da Inovação, de ponta a ponta, sob requisitos rigorosos de WCAG e performance.",
-				"Cobertura de testes em fluxos críticos acima de 85% com Jest, Vitest, React Testing Library e Playwright.",
-				"Visualização de biometria de voz em tempo real com React, WebSockets e ApexCharts — maior nota de satisfação do cliente.",
-				"Evolução do Design System proprietário usado em mais de 30 aplicações; condutor do Chapter Front-end."
+				"Reduzi o tempo de abertura de um seletor com ~2.200 ícones de 1.756 ms para 136 ms e elevei a taxa de quadros na filtragem de 30 para 60 FPS (pior quadro de 491 ms para 45 ms), virtualizando a lista com TanStack Virtual e removendo a estilização por item do runtime de CSS-in-JS (medido sob CPU throttling de 4x).",
+				"Reduzi o tempo de carregamento de tela de 5,4 s para 2,2 s (validado pelo QA; payload com 10 imagens caiu de 4.952 kB para 809 kB), convertendo imagens coladas para WebP no navegador, comprimindo uploads e aplicando lazy rendering em rich text.",
+				"Entreguei uma interface de biometria de voz em tempo real que recebeu a maior nota de satisfação de cliente do portfólio, arquitetando a aplicação React sobre WebSocket com gráficos ao vivo.",
+				"Mantive mais de 85% de cobertura de testes automatizados nos fluxos críticos projetando uma estratégia em camadas (Jest, React Testing Library e Playwright) integrada ao pipeline de CI/CD no Jenkins.",
+				"Contribuí com componentes reutilizáveis para o Design System corporativo e empacotei uma biblioteca isolada com 25 componentes (temas claro e escuro, Storybook navegável) para um time parceiro externo sem acesso ao repositório, removendo dependências internas de autenticação e API.",
+				"Defini contratos de APIs REST junto ao backend, propus uma camada Backend-for-Frontend (BFF), desbloqueei o provisionamento OIDC/SSO de usuários no Nextcloud via requisição WebDAV autenticada e desenvolvi interfaces acessíveis (WCAG) para o Portal DestaquesGovBr (MGI / INSPIRE).",
+				"Host do Frontend Chapter (sessões técnicas recorrentes e mentoria) e liderei a adoção de programação assistida por IA (Claude Code, Cursor) em projeto de cliente, incluindo palestra técnica interna e moderação da roda de discussão sobre IA da empresa."
+			]
+		},
+		"turing": {
+			"company": "Turing",
+			"position": "Desenvolvedor Frontend (React)",
+			"meta": "Califórnia, EUA · Remoto · Contrato",
+			"period": "Jan 2026 — Ago 2026",
+			"shot": "Ilustração — ambiente sandbox de treino de agentes",
+			"description": [
+				"Desenvolvi e entreguei interfaces de usuário em produção com React e Next.js para plataformas de treinamento de agentes de IA utilizadas por clientes como Microsoft e Amazon, atuando em um time de engenharia distribuído e assíncrono nos EUA.",
+				"Co-liderei projetos de ponta a ponta ao lado do tech lead — quebrando requisitos em tarefas com escopo definido, distribuindo demandas entre desenvolvedores e assumindo o reporte de progresso na ausência do líder.",
+				"Reduzi o tempo do ciclo de desenvolvimento sob prazos apertados introduzindo fluxos de engenharia assistidos por IA (Claude Code, Cursor) e documentando convenções de revisão de código adotadas pelo time.",
+				"Colaborei diariamente em inglês (escrito e falado) com designers, stakeholders de produto e engenheiros em diferentes fusos horários dos EUA."
 			]
 		},
 		"mmarketplaces": {
 			"company": "MMarketplaces",
-			"position": "Desenvolvedor Front-end",
-			"meta": "Remoto · Freelance",
+			"position": "Desenvolvedor Frontend",
+			"meta": "Brasil · Remoto · Contrato",
 			"period": "Dez 2023 — Abr 2024",
 			"shot": "Ilustração — dashboard de vendas e integrações",
 			"description": [
-				"Redução de 90% no tempo de carregamento ao otimizar integrações com as APIs do Bling e Mercado Livre com estratégias de cache.",
-				"Liderança da modernização completa de uma aplicação legada para React, TypeScript e Redux.",
-				"Dashboard interativo em ApexCharts com filtros e paginação sobre APIs REST."
+				"Reduzi o tempo de carregamento da aplicação em ~90% ao diagnosticar chamadas redundantes a APIs de terceiros como o gargalo real e construir uma camada de API e cache em Node.js para centralizar as integrações.",
+				"Liderei a reconstrução completa do frontend de uma plataforma legada de analytics para e-commerce em React, TypeScript e Redux como único desenvolvedor frontend, definindo arquitetura de componentes, estado e busca de dados do zero.",
+				"Construí um dashboard operacional responsivo com gráficos interativos (ApexCharts), tabelas grandes filtráveis e paginação controlada via URL sobre dados de múltiplos marketplaces.",
+				"Projetei endpoints REST que agregavam e normalizavam respostas de diferentes provedores de marketplace em um contrato único para o frontend."
+			]
+		},
+		"cpqdIntern": {
+			"company": "CPQD",
+			"position": "Estagiário de Desenvolvimento Frontend",
+			"meta": "Campinas-SP · Remoto · Estágio",
+			"period": "Dez 2022 — Nov 2023",
+			"shot": "Ilustração — módulo de cobrança e negociação de dívidas",
+			"description": [
+				"Desenvolvi o módulo de cobrança e negociação de dívidas de uma plataforma corporativa de Billing durante todo o ciclo de desenvolvimento, da estruturação inicial ao encerramento do projeto, utilizando React, TypeScript, Redux e Material UI.",
+				"Atuei com pair programming e code reviews constantes em parceria com analistas de requisitos, UX designers e engenheiros backend para manter alta qualidade de código e minimizar retrabalho."
 			]
 		},
 		"hiit": {
-			"company": "HIIT & Tabata",
-			"position": "Desenvolvedor Front-end",
-			"meta": "Remoto",
+			"company": "HIIT and Tabata",
+			"position": "Desenvolvedor Frontend",
+			"meta": "Brasil · Remoto · Contrato",
 			"period": "Jul 2022 — Abr 2023",
 			"shot": "Ilustração — blocos de treino intervalado",
 			"description": [
-				"Aplicações web responsivas e acessíveis com React, JavaScript, CSS3 e Material UI.",
-				"Melhoria da experiência da plataforma com time multidisciplinar, a partir de feedback direto dos usuários."
+				"Desenvolvi interfaces web responsivas e compatíveis entre navegadores com React, JavaScript, SCSS e Material UI diretamente a partir dos protótipos de design em um time multidisciplinar.",
+				"Expandi o produto para dispositivos móveis entregando um aplicativo multiplataforma em React Native com funcionalidades de gestão de treinos para personal trainers."
 			]
 		}
 	},
 	"skills": {
 		"title": "Stack",
 		"categories": {
-			"frontend": "Frontend",
-			"styling": "Estilização",
+			"frontend": "Frontend e APIs",
+			"styling": "UI, Design Systems e Acessibilidade",
 			"testing": "Testes",
-			"delivery": "Entrega"
+			"delivery": "Entrega, CI/CD e Fluxo com IA"
 		}
 	},
 	"projects": {
 		"title": "Projetos",
-		"eyebrowGov": "Governo · Next.js · Typesense",
+		"eyebrowGov": "Governo Federal · React · WCAG · Nextcloud SSO",
 		"eyebrowOss": "Open source · roadmap.sh",
-		"inspire": {
-			"title": "DestaquesGovbr — Portal de Notícias do Governo Brasileiro",
-			"description": "Portal de descoberta de notícias governamentais construído com Next.js, TypeScript e Typesense. Atuação em funcionalidades de busca, melhorias de interface e automação de testes.",
-			"shot": "Ilustração — portal de descoberta de notícias"
-		},
 		"roadmap": {
-			"title": "Conteúdo de Design System para o Roadmap de Frontend",
-			"description": "Contribuição aprovada no roadmap.sh, propondo e adicionando conteúdo sobre Design System ao roadmap de frontend: tipografia, cores, espaçamento, componentes de UI e padrões de interação.",
+			"title": "Conteúdo de Design System — roadmap.sh Frontend Roadmap",
+			"description": "Contribuição open source aprovada no roadmap.sh, propondo e adicionando conteúdo sobre Design Systems ao roadmap oficial de Frontend (tipografia, cores, espaçamento, bibliotecas de componentes e padrões de interação).",
 			"shot": "Ilustração — grafo de nós de um roadmap"
+		},
+		"inspire": {
+			"title": "Portal DestaquesGovBr — Governo Federal (MGI / INSPIRE)",
+			"description": "Contribuição no desenvolvimento frontend do Portal DestaquesGovBr do Governo Federal para o Ministério da Gestão e da Inovação em Serviços Públicos (MGI), dentro do projeto INSPIRE — entregando interfaces React acessíveis (WCAG), componentes reutilizáveis de Design System e desbloqueando o provisionamento OIDC/SSO de usuários no Nextcloud via requisição WebDAV autenticada.",
+			"shot": "Ilustração — portal de descoberta de notícias"
 		}
 	},
 	"contact": {
 		"title": "Contato",
-		"blurb": "Aberto a conversar sobre front-end de alta complexidade, performance e acessibilidade.",
+		"blurb": "Aberto a conversar sobre oportunidades como Desenvolvedor Frontend / Full-Stack (React, Next.js, TypeScript, Node.js), performance web, Design Systems e acessibilidade.",
 		"copy": "Copiar",
 		"copied": "Copiado"
 	},
@@ -102,6 +124,8 @@
 		"copyEmail": "Copiar e-mail para a área de transferência",
 		"emailCopied": "E-mail copiado para a área de transferência",
 		"switchLanguage": "Mudar idioma para inglês",
+		"previousRole": "Experiência anterior",
+		"nextRole": "Próxima experiência",
 		"visitGithub": "Visitar o perfil de Lucas Mauricio no GitHub",
 		"visitLinkedin": "Visitar o perfil de Lucas Mauricio no LinkedIn",
 		"openWhatsapp": "Abrir conversa no WhatsApp"

@@ -3,18 +3,18 @@ import { initReactI18next } from "react-i18next";
 import en from "./locales/en.json";
 import pt from "./locales/pt.json";
 
-export const LANGUAGE_STORAGE_KEY = "lm.lang";
+export const LANGUAGE_STORAGE_KEY = "lm.lang.v2";
 
 i18n.use(initReactI18next).init({
 	resources: {
 		en: { translation: en },
 		pt: { translation: pt },
 	},
-	// Must stay a constant: SSR renders <html lang="pt">, so the first client
+	// Must stay a constant: SSR renders <html lang="en">, so the first client
 	// render has to match or React reports a hydration mismatch. The stored
 	// preference is restored after hydration (see LanguageSwitcher).
-	lng: "pt",
-	fallbackLng: "pt",
+	lng: "en",
+	fallbackLng: "en",
 	interpolation: {
 		escapeValue: false,
 	},
